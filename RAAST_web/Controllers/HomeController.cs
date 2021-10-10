@@ -31,6 +31,11 @@ namespace RAAST_web.Controllers
         {
             ViewBag.Message = "Yannick heeft hoofdpijn van mensen die niks snappen van git";
 
+        public ActionResult InfoBoot()
+        {
+            ViewBag.Message = "Dit is de informatie van onze boot.";
+
+
             return View();
         }
     }
