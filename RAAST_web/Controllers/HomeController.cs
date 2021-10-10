@@ -26,5 +26,11 @@ namespace RAAST_web.Controllers
 
             return View();
         }
+        public ActionResult InfoBoot()
+        {
+            ViewBag.Message = "Dit is de informatie van onze boot.";
+
+            return View();
+        }
     }
 }
