@@ -203,11 +203,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Home\Test_Yannick.cshtml" />
-=======
     <Content Include="Views\_LayoutPage1.cshtml" />
->>>>>>> origin/Home-Page
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
