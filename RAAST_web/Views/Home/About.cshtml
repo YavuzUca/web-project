@@ -4,4 +4,22 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<style>
+    body {
+        background-color: yellow;
+    }
+</style>
+
+
+<form id="form1" runat="server">
+    <cc1:ImageUploader ID="ImageUploader1" runat="server"
+                       Height="400" Width="600"
+                       Action="Default.aspx"
+                       RedirectUrl="Gallery.aspx"
+                       UploadThumbnail1FitMode="Fit"
+                       UploadThumbnail1Width="120"
+                       UploadThumbnail1Height="120"
+                       OnFileUploaded="FileUploaded" />
+</form>
+
+<p>On this website you can track our boat's live location. You can also post a comment in our blog or take a look at some data!</p>

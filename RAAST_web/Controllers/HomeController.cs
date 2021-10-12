@@ -15,7 +15,7 @@ namespace RAAST_web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "This is the about page.";
 
             return View();
         }
@@ -29,7 +29,9 @@ namespace RAAST_web.Controllers
 
         public ActionResult Test_Yannick()
         {
-            ViewBag.Message = "Yannick heeft hoofdpijn van mensen die niks snappen van git";
+            ViewBag.Message = ".";
+            return View();
+        }
 
         public ActionResult InfoBoot()
         {
