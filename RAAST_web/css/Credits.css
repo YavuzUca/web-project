@@ -1,0 +1,44 @@
+﻿@keyframes move {
+    0% {
+        bottom: -200px;
+    }
+
+    100% {
+        bottom: 200px;
+    }
+}
+body {
+    background-color: pink;
+}
+
+.Header {
+    position: relative;
+    text-align: center;
+    background-color: gray
+}
+
+.Random1 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: lightpink;
+}
+
+.Credit {
+    position: relative;
+    height: 400px;
+    width: auto;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    
+}
+
+.Credittext {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    display:block;
+    animation: move linear 10s;
+    
+}
