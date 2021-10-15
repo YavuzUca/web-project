@@ -8,9 +8,29 @@
     }
 }
 body {
-    background-color: pink;
+    background-color: #F8F5EE;
+    margin:0px;
+    padding:0px;
+    border: 3px solid blue;
+}
+div{
+    margin: 0px;
+    padding:0px
 }
 
+
+.background {
+    background-image: url(../images/RandomAnimeBackground.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size:cover;
+    height: 800px;
+    max-width: auto;
+    border: 3px solid red;
+}
+.backgroundtext{
+
+}
 .Header {
     position: relative;
     text-align: center;
@@ -31,6 +51,7 @@ body {
     background-color: black;
     color: white;
     overflow: hidden;
+    top: 500px;
     
 }
 
@@ -43,4 +64,12 @@ body {
     text-align:center;
     transform: translate(-50%, 0);
     
+}
+.text1{
+    border: 3px solid red;
+    width: 50% 50%;
+    height: auto;
+    position:relative;
+    left: 0px;
+    margin: 20px;
 }
