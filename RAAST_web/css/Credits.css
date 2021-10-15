@@ -40,6 +40,7 @@ body {
     left: 50%;
     display:block;
     animation: move linear 10s infinite;
-    
+    text-align:center;
+    transform: translate(-50%, 0);
     
 }
