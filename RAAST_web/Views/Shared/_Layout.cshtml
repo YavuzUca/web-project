@@ -8,23 +8,25 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #ce0033 ; border-color : red">
+        <a class="navbar-brand" href="#">
+            <img src="~/images/hr_logo_rechtsonder_cmyk_diap-390x330.webp" width="30" height="30" class="d-inline-block align-top" alt="">
+        </a>
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle btn btn-danger" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("RAAST", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapses">
                 <ul class="nav navbar-nav">
                     <!-- First param is text on navbar, second param is the filename, third param is the name of the controller. -->
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Yannick", "Test_Yannick", "Home")</li>
                     <li>@Html.ActionLink("Info", "InfoBoot", "Home")</li>
 
                 </ul>
@@ -35,7 +37,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Raast Project</p>
+            <p>&copy; @DateTime.Now.Year - RAAST Hogeschool Rotterdam</p>
 
         </footer>
     </div>
