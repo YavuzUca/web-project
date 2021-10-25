@@ -147,6 +147,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.test.css" />
+    <Content Include="css\Credits.css" />
     <Content Include="css\styletem.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -165,6 +166,7 @@
     <Content Include="images\banner3.jpg" />
     <Content Include="images\banner4.jpg" />
     <Content Include="images\bg.jpg" />
+    <Content Include="images\RandomAnimeBackground.png" />
     <Content Include="images\img1.jpg" />
     <Content Include="images\img2.jpg" />
     <Content Include="images\img3.jpg" />
