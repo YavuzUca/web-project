@@ -9,9 +9,6 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #ce0033 ; border-color : red">
-        <a class="navbar-brand" href="#">
-            <img src="~/images/hr_logo_rechtsonder_cmyk_diap-390x330.webp" width="30" height="30" class="d-inline-block align-top" alt="">
-        </a>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle btn btn-danger" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,12 +21,7 @@
             <div class="navbar-collapse collapses">
                 <ul class="nav navbar-nav">
                     <!-- First param is text on navbar, second param is the filename, third param is the name of the controller. -->
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Info", "InfoBoot", "Home")</li>
-                    <li>@Html.ActionLink("Credits","Credits","Home")</li>
-
+                    <li>@Html.ActionLink("Add Editor", "AddEditor", "Admin")</li>
                 </ul>
             </div>
         </div>

@@ -15,7 +15,8 @@ namespace RAAST_web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "On this website you can track our boat's live location. You can also post a comment in our blog or take a look at some data!";
+
 
             return View();
         }
@@ -23,6 +24,12 @@ namespace RAAST_web.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Credits()
+        {
+            ViewBag.Message = "credits";
 
             return View();
         }
