@@ -1,6 +1,6 @@
 ﻿@keyframes move {
     0% {
-        bottom: -300px;
+        bottom: -400px;
     }
 
     100% {
@@ -13,36 +13,14 @@ body {
     padding:0px;
     border: 3px solid blue;
 }
-div{
-    margin: 0px;
-    padding:0px
-}
 
-
-.background {
-    background-image: url(../images/RandomAnimeBackground.png);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size:cover;
-    height: 800px;
-    max-width: auto;
-    border: 3px solid red;
-}
-.backgroundtext{
-
-}
 .Header {
+    top: 40px;
     position: relative;
     text-align: center;
-    background-color: gray
+    font-size:40px;
 }
 
-.Random1 {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background-color: lightpink;
-}
 
 .Credit {
     position: relative;
@@ -51,25 +29,16 @@ div{
     background-color: black;
     color: white;
     overflow: hidden;
-    top: 500px;
     
 }
 
 .Credittext {
     position: absolute;
-    bottom: -300px;
+    bottom: -400px;
     left: 50%;
     display:block;
     animation: move linear 10s infinite;
     text-align:center;
     transform: translate(-50%, 0);
     
-}
-.text1{
-    border: 3px solid red;
-    width: 50% 50%;
-    height: auto;
-    position:relative;
-    left: 0px;
-    margin: 20px;
 }
