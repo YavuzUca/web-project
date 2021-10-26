@@ -26,6 +26,12 @@ namespace RAAST_web.Controllers
 
             return View();
         }
+        public ActionResult Credits()
+        {
+            ViewBag.Message = "credits";
+
+            return View();
+        }
 
         public ActionResult Test_Yannick()
         {
