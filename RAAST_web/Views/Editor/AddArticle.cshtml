@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "AddArticle";
+    Layout = "~/Views/editorNavLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Article builder</title>
+</head>
+<body>
+    <h2>
+        Add an article here
+    </h2>
+    <form method="post" action="Verify">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input required type="text" class="form-control" id="title"  placeholder="Enter Title">
+        </div>
+        <div class="form-group">
+            <label for="header">Header</label>
+            <input required type="text" class="form-control" id="header" placeholder="Header">
+        </div>
+        <div class="form-group">
+            <label for="text">Text</label>
+            <textarea class="form-control" id="textArea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Publish Article</button>
+    </form>
+
+</body>
+</html>
+

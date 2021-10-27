@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace RAAST_web.Controllers
 {
-    public class AdminController : Controller
+    public class EditorController : Controller
     {
         // GET: Editor
-        public ActionResult AddEditor()
+        public ActionResult AddArticle()
         {
             return View();
         }
