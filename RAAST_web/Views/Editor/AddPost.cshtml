@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <style>
+        textarea{
+            max-width: 400px !important;
+        }
     </style>
 </head>
 <body>
@@ -29,6 +32,20 @@
             <input required type="password" class="form-control" id="passWordRepeat" placeholder="Password">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <form action=""
+          method="POST"
+          enctype="multipart/form-data"
+          name="EmailForm">
+
+        Name:<br>
+        <input type="text" size="19" name="ContactName" value="" placeholder="Subject">
+        <br><br>
+        Message:<br>
+        <textarea name="ContactCommentt" rows="6" cols="50" max-width="400" value="" placeholder="Message">
+        </textarea>
+        <br><br>
+        <input type="submit" value="Submit" ">
     </form>
 
 </body>
