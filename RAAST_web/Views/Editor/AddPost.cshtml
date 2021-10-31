@@ -18,33 +18,21 @@
     <h2>
         Add newsletter
     </h2>
+    </form>
     <form method="post" action="Verify">
         <div class="form-group">
-            <label for="userName">Username</label>
-            <input required type="text" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter Username">
+            <label for="title">Title</label>
+            <input required type="text" class="form-control" id="title" placeholder="Enter Title">
         </div>
         <div class="form-group">
-            <label for="passWord">Password</label>
-            <input required type="password" class="form-control" id="passWord" placeholder="Password">
+            <label for="header">Header</label>
+            <input required type="text" class="form-control" id="header" placeholder="Header">
         </div>
         <div class="form-group">
-            <label for="passWordRepeat">Re-enter Password</label>
-            <input required type="password" class="form-control" id="passWordRepeat" placeholder="Password">
+            <label for="text">Content</label>
+            <textarea class="form-control" id="textArea1" rows="3"></textarea>
         </div>
-       
-    </form>
-    <form action=""
-          method="POST"
-          enctype="multipart/form-data"
-          name="EmailForm">
-
-        Name:<br>
-        <input type="text" size="19" name="ContactName" value="" placeholder="Subject">
-        <br><br>
-        Message:<br>
-        <textarea name="ContactCommentt" rows="6" cols="50" max-width="400" value="" placeholder="Message">
-        </textarea>
-        <div> <button type="submit" class="btn btn-primary">Publish</button></div>
+        <button type="submit" class="btn btn-primary">Publish newsletter</button>
     </form>
 
 </body>
