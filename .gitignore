@@ -76,3 +76,4 @@ _[Ss]cripts
 *.dot[Cc]over
 .vs/RAAST_web/v16/.suo
 .vs/RAAST_web/config/applicationhost.config
+*.cache

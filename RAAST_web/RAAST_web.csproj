@@ -217,6 +217,10 @@
     <Content Include="Views\editorNavLayout.cshtml" />
     <Content Include="Views\Editor\AddArticle.cshtml" />
     <Content Include="Views\Editor\Success.cshtml" />
+    <Content Include="Views\Editor\AddPost.cshtml" />
+    <Content Include="Views\Editor\Verify.cshtml" />
+    <Content Include="Views\Home\Credits.cshtml" />
+    <Content Include="Views\Home\InfoBoot.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

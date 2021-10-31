@@ -13,6 +13,12 @@ namespace RAAST_web.Controllers
         {
             return View();
         }
+
+        public ActionResult AddPost()
+        {
+            return View();
+        }
+
         public ActionResult Verify()
         {
             return View("Success");
