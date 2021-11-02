@@ -1,17 +1,16 @@
 ﻿@keyframes move {
     0% {
-        bottom: -400px;
+        bottom: -800px;
     }
 
     100% {
-        bottom: 400px;
+        bottom: 700px;
     }
 }
 body {
     background-color: #F8F5EE;
     margin:0px;
     padding:0px;
-    border: 3px solid blue;
 }
 
 .Header {
@@ -33,10 +32,10 @@ body {
 
 .Credittext {
     position: absolute;
-    bottom: -400px;
+    bottom: -800px;
     left: 50%;
     display:block;
-    animation: move linear 10s infinite;
+    animation: move linear 15s infinite;
     text-align:center;
     transform: translate(-50%, 0);
     
