@@ -7,7 +7,8 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <title>Informatie over het bootje</title>
+    <link href="~/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossorigin="" />
@@ -15,49 +16,8 @@
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin="">
     </script>
-    <style>
-        .centeredWhite {
-            text-align: center;
-            color: #ffffff;
-        }
-
-        .ct {
-            border-bottom: 1px solid white;
-        }
-
-        .headerDiv {
-            width: 150px;
-            margin: 0 auto;
-        }
-
-        .map-responsive {
-            overflow: hidden;
-            padding-bottom: 56.25%;
-            position: relative;
-            height: 0;
-        }
-
-            .map-responsive iframe {
-                left: 0;
-                top: 0;
-                height: 100%;
-                width: 100%;
-                position: absolute;
-            }
-
-        .bigBackground {
-            background: #f8f5ee;
-        }
-
-        .moduleStyle {
-            background: #ce0033;
-            border-bottom: 5px solid black;
-            border-radius: 25px;
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
-<body class="bigBackground">
+<body>
     <div class="container">
         <h2>@ViewBag.Title</h2>
         <h3>@ViewBag.Message</h3>
