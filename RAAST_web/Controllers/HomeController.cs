@@ -41,7 +41,7 @@ namespace RAAST_web.Controllers
         }
         public ActionResult InfoBoot()
         {
-            ViewBag.Message = "Dit is de informatie van onze boot.";
+            ViewBag.Message = "This is the information about our boat.";
 
 
             return View();
