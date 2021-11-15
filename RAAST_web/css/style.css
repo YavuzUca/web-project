@@ -16,7 +16,7 @@
 
 
 .Credit {
-    background: url(../images/banner1.jpg);
+    background: url(../images/Banner_Credits.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,11 +33,11 @@
     position: absolute;
     bottom: -800px;
     left: 50%;
-    display:block;
+    text-shadow: 2px 2px #000000;
+    display: block;
     animation: move linear 15s infinite;
-    text-align:center;
+    text-align: center;
     transform: translate(-50%, 0);
-    
 }
 
 .centeredWhite {
