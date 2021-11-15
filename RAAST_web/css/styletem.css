@@ -15132,7 +15132,7 @@ nav ul li a:hover {
 }
 
 .t2t-main-slider .banner-view {
-    background: url(../images/banner1.jpg) no-repeat center;
+    background: url(../images/banner_blank_1.jpg) no-repeat center;
     background-size: cover;
     min-height: calc(100vh - 30px);
     position: relative;
@@ -15142,8 +15142,8 @@ nav ul li a:hover {
 }
 
 .t2t-main-slider .banner-top1 {
-  background: url(../images/banner2.jpg) no-repeat center;
-  background-size: cover;
+    background: url(../images/banner_blank_2.jpg) no-repeat center;
+    background-size: cover;
 }
 
 .t2t-main-slider .banner-top2 {
@@ -16274,17 +16274,17 @@ button.owl-next {
   font-weight: 700;
 }
 
-.t2t-bottom-grids .bottomhny-1-img {
-  background: url(../images/banner2.jpg) no-repeat top;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  position: relative;
-  padding: 40px;
-  min-height: 350px;
-}
+    .t2t-bottom-grids .bottomhny-1-img {
+        background: url(../images/banner_blank_2.jpg) no-repeat top;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -ms-background-size: cover;
+        position: relative;
+        padding: 40px;
+        min-height: 350px;
+    }
 
 @media (max-width:992px) {
   .t2t-bottom-grids .bottomhny-grids-sec {
