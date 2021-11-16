@@ -20,12 +20,6 @@ namespace RAAST_web.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
         public ActionResult Credits()
         {
             ViewBag.Message = "credits";
@@ -33,12 +27,6 @@ namespace RAAST_web.Controllers
             return View();
         }
 
-        public ActionResult Test_Yannick()
-        {
-            ViewBag.Message = "Taaie zaak";
-
-            return View();
-        }
         public ActionResult InfoBoot()
         {
             ViewBag.Message = "This is the information about our boat.";

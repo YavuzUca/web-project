@@ -16274,17 +16274,17 @@ button.owl-next {
   font-weight: 700;
 }
 
-    .t2t-bottom-grids .bottomhny-1-img {
-        background: url(../images/banner_blank_2.jpg) no-repeat top;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        -moz-background-size: cover;
-        -ms-background-size: cover;
-        position: relative;
-        padding: 40px;
-        min-height: 350px;
-    }
+.t2t-bottom-grids .bottomhny-1-img {
+  background: url(../images/banner_blank_2.jpg) no-repeat top;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  position: relative;
+  padding: 40px;
+  min-height: 350px;
+}
 
 @media (max-width:992px) {
   .t2t-bottom-grids .bottomhny-grids-sec {
