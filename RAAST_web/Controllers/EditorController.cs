@@ -29,9 +29,6 @@ namespace RAAST_web.Controllers
         }
         public ActionResult BlogPostContent(int id)
         {
-
-            ViewBag.Message = "This is the information about our boat.";
-
             ViewBag.idFromUrl = id;
             string res = "";
             for (int i = 0; i < 100; i++) { res += id.ToString(); }
