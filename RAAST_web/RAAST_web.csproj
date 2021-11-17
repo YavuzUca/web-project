@@ -233,6 +233,7 @@
     <Content Include="Views\Home\Credits.cshtml" />
     <Content Include="Views\Home\InfoBoot.cshtml" />
     <Content Include="Views\Admin\ShowEditors.cshtml" />
+    <Content Include="Views\Admin\ShowClientList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

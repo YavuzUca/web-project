@@ -32,6 +32,19 @@ namespace RAAST_web.Controllers
 
             return View(users);
         }
+        public ActionResult ShowClientList()
+        {
+            var test = new Data();
+
+            List<Newsletter> newsletters = new List<Newsletter>();
+
+            foreach (Newsletter u in test.Newsletters)
+            {
+                newsletters.Add(u);
+            }
+
+            return View(newsletters);
+        }
 
     }
 }
