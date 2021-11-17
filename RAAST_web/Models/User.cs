@@ -9,6 +9,12 @@ namespace RAAST_web.Models
     [Table("User")]
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            Blogposts = new HashSet<Blogpost>();
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -21,5 +27,8 @@ namespace RAAST_web.Models
 
         [Required]
         public string passWord_hash { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Blogpost> Blogposts { get; set; }
     }
 }
