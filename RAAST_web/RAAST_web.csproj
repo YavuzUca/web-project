@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Models\Editor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Editor\TestingSlug.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -221,6 +222,7 @@
     <Content Include="Views\Home\InfoBoot.cshtml" />
     <Content Include="Views\Editor\BlogPost_Editor.cshtml" />
     <Content Include="Views\Home\BlogPost.cshtml" />
+    <Content Include="Views\Editor\BlogPostContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

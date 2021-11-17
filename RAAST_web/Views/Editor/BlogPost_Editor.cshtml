@@ -3,9 +3,7 @@
 }
 
 <!DOCTYPE html>
-@{
-    ;
-}
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -19,12 +17,17 @@
     {
 
         <h3>Header @i</h3>
-        <a href="" target="_blank">HeaderLink @i</a>
-
+        @Html.ActionLink($"Header {i}", "BlogPostContent", "Editor", i)
+        <!--
+        <a asp-area="" asp-controller="Editor" asp-action="BlogContent" asp-route-id="@i" asp-route-slug="@i">Header @i</a>
+            -->
+        <!--
+        <a href="@i" target="_blank">HeaderLink @i</a>
+        -->
         <br />
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non pellentesque eros. Suspendisse consequat velit vel ex ornare suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris porta ex quis quam sagittis viverra. Maecenas suscipit lacus eu ullamcorper varius. Integer vulputate, sem vel sagittis tempor, neque lacus pretium lorem, et pretium turpis dui nec felis. Nunc eget sapien a nisi vestibulum sagittis. Aenean efficitur placerat nulla sit amet tincidunt. Quisque in eros ac ipsum ornare interdum ut nec turpis. Nullam eu lorem consequat, varius nisl et, bibendum sem. Aenean quis velit non elit ultricies commodo. Fusce nulla tortor, tempor nec augue sit amet, viverra convallis arcu. Pellentesque pulvinar, augue id tempor vestibulum, nisi magna venenatis nisl, non condimentum urna purus ut quam. Vivamus elementum metus a elementum iaculis. Quisque ultricies dignissim nulla, ut lacinia felis molestie vel.</p>
         <br /><br />
-    };
+    }
     <div>
 
     </div>
