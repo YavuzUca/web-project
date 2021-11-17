@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RAAST_web.Models;
 
 namespace RAAST_web.Controllers
 {
@@ -17,5 +18,27 @@ namespace RAAST_web.Controllers
         {
             return View("Success");
         }
+
+        public ActionResult ShowEditors()
+        {
+            var test = new Data();
+
+            
+            return View(test.Users);
+        }
+        public ActionResult ShowClientList()
+        {
+            var test = new Data();
+
+            List<Newsletter> newsletters = new List<Newsletter>();
+
+            foreach (Newsletter u in test.Newsletters)
+            {
+                newsletters.Add(u);
+            }
+
+            return View(newsletters);
+        }
+
     }
 }
