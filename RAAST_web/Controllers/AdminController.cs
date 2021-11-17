@@ -23,14 +23,8 @@ namespace RAAST_web.Controllers
         {
             var test = new Data();
 
-            List<User> users = new List<User>();
-
-            foreach (User u in test.Users)
-            {
-                users.Add(u);
-            }
-
-            return View(users);
+            
+            return View(test.Users);
         }
         public ActionResult ShowClientList()
         {
