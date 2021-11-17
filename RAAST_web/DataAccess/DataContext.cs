@@ -18,6 +18,7 @@ namespace RAAST_web.DataAccess
         public DbSet<Editor> editors { get; set; }
 
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
