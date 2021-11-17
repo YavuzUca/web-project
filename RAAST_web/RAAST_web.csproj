@@ -219,6 +219,8 @@
     <Content Include="Views\Editor\Verify.cshtml" />
     <Content Include="Views\Home\Credits.cshtml" />
     <Content Include="Views\Home\InfoBoot.cshtml" />
+    <Content Include="Views\Editor\BlogPost_Editor.cshtml" />
+    <Content Include="Views\Home\BlogPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

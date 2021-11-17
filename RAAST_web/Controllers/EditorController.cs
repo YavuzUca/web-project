@@ -23,5 +23,9 @@ namespace RAAST_web.Controllers
         {
             return View("Success");
         }
+        public ActionResult BlogPost_Editor()
+        {
+            return View();
+        }
     }
 }

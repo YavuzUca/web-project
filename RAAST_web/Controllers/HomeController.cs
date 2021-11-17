@@ -34,5 +34,9 @@ namespace RAAST_web.Controllers
 
             return View();
         }
+        public ActionResult BlogPost()
+        {
+            return View();
+        }
     }
 }
