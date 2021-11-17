@@ -35,7 +35,7 @@ namespace RAAST_web.Controllers
             ViewBag.idFromUrl = id;
             string res = "";
             for (int i = 0; i < 100; i++) { res += id.ToString(); }
-            ViewBag.testC = "teSTING LAG GHH";
+            ViewBag.testC = res;
             //handle data
             return View();
         }
