@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/editorNavLayout.cshtml";
 }
-@model RAAST_web.Models.Blogpost
+@model IEnumerable<RAAST_web.Models.Blogpost>
 <!DOCTYPE html>
 
 <html>
@@ -13,9 +13,9 @@
     <h1>BlogPost</h1>
     <br>
 
-    @for (int i = 0; i < 100; i++)
+    @foreach (var item in Model.ToList())
     {
-    <h3>@Html.ActionLink($"Header {i}", "BlogPostContent", "Home", new { id = i },null)</h3>
+        <h3>@Html.ActionLink(item.title, "BlogPostContent", "Home", new { id = item.Id, title = item.title, content = item.content }, null)</h3>
     }
 
     <div>

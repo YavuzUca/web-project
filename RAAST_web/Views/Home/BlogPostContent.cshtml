@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "~/Views/editorNavLayout.cshtml";
 }
+@model IEnumerable<RAAST_web.Models.Blogpost>
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <h3>Title @ViewBag.idFromUrl</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non pellentesque eros. Suspendisse consequat velit vel ex ornare suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris porta ex quis quam sagittis viverra. Maecenas suscipit lacus eu ullamcorper varius. Integer vulputate, sem vel sagittis tempor, neque lacus pretium lorem, et pretium turpis dui nec felis. Nunc eget sapien a nisi vestibulum sagittis. Aenean efficitur placerat nulla sit amet tincidunt. Quisque in eros ac ipsum ornare interdum ut nec turpis. Nullam eu lorem consequat, varius nisl et, bibendum sem. Aenean quis velit non elit ultricies commodo. Fusce nulla tortor, tempor nec augue sit amet, viverra convallis arcu. Pellentesque pulvinar, augue id tempor vestibulum, nisi magna venenatis nisl, non condimentum urna purus ut quam. Vivamus elementum metus a elementum iaculis. Quisque ultricies dignissim nulla, ut lacinia felis molestie vel.</p>
-
-</body>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title></title>
+    </head>
+    <body>
+        <h3>@ViewBag.title</h3>
+        <p>@ViewBag.content</p>
+    </body>
 </html>

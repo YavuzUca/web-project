@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RAAST_web.Models;
 
 namespace RAAST_web.Controllers
 {
@@ -38,12 +39,13 @@ namespace RAAST_web.Controllers
         {
             return View();
         }
-        public ActionResult BlogPostContent(int id)
+        public ActionResult BlogPostContent(int id, string title, string content)
         {
             ViewBag.idFromUrl = id;
-            string res = "";
-            for (int i = 0; i < 100; i++) { res += id.ToString(); }
-            ViewBag.testC = res;
+            Models.Blogpost blogpost = new Models.Blogpost();
+            ViewBag.Title = title;
+            ViewBag.Description = content;
+            
             //handle data
             return View();
         }
