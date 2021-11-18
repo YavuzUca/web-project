@@ -10,12 +10,12 @@
     <title></title>
 </head>
 <body>
-    <h1>BlogPost Editor</h1>
+    <h1>BlogPost</h1>
     <br>
 
     @for (int i = 0; i < 100; i++)
     {
-        <h3>@Html.ActionLink($"Header {i}", "BlogPostEditorContent", "Editor", new { id = i },null)</h3>
+        <h3>@Html.ActionLink($"Header {i}", "BlogPostContent", "Home", new { id = i },null)</h3>
     }
     
     <div>
