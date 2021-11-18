@@ -40,7 +40,7 @@
             <p class="centeredWhite">This is the current speed of the boat</p>
             <div class="centeredWhite">
 
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed)
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed) km/h
                 
             </div>
         </div>
@@ -55,7 +55,7 @@
             <p class="centeredWhite">This is the current wind force </p>
             <div class="centeredWhite">
 
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count -1].wind_Speed)
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count -1].wind_Speed) km/h
             </div>
 
         </div>
@@ -68,7 +68,7 @@
             <p class="centeredWhite">This is the current temperature</p>
             <div class="centeredWhite">
 
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature)
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature) °C
             </div>
         </div>
         <div class="col-lg-offset-2 col-lg-5 moduleStyle">
@@ -79,14 +79,14 @@
             <p class="centeredWhite">This is the current direction of the wind</p>
             <div class="centeredWhite">
 
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Direction)
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Direction)°
             </div>
         </div>
     </div>
 
-    
+        
 
-        <script>
+    <script>
             var map = L.map('map').setView([51.91045640625668, 4.450265871598626], 13);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -96,6 +96,25 @@
             L.marker([51.91045640625668, 4.450265871598626]).addTo(map)
                 .bindPopup('Home sweet home')
                 .openPopup();
-        </script>
+           
+            var model2 = @Html.Raw(Json.Encode(Model));
+
+        var pointlist = [];
+
+        for (var i = 0; i <= model2.length; i++)
+        {
+            L.marker([model2[i].longitude, model2[i].latitude]).addTo(map)
+                .bindPopup('Speed = ' + model2[i].boat_Speed.toString() + 'km\h' +
+                '<br>Tempareture = ' + model2[i].temperature.toString() + '°C' +
+                '<br>Windspeed = ' + model2[i].wind_Speed.toString() + 'km/n' +
+                '<br>Winddirection = ' + model2[i].wind_Direction.toString() + '°')
+                
+
+           
+        }
+
+
+
+    </script>
 </body>
 </html>
