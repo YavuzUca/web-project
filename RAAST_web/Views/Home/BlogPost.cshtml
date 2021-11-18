@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/editorNavLayout.cshtml";
 }
-
+@model RAAST_web.Models.Blogpost
 <!DOCTYPE html>
 
 <html>
@@ -15,9 +15,9 @@
 
     @for (int i = 0; i < 100; i++)
     {
-        <h3>@Html.ActionLink($"Header {i}", "BlogPostContent", "Home", new { id = i },null)</h3>
+    <h3>@Html.ActionLink($"Header {i}", "BlogPostContent", "Home", new { id = i },null)</h3>
     }
-    
+
     <div>
 
     </div>
