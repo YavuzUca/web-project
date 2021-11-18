@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/editorNavLayout.cshtml";
+}
+@model IEnumerable<RAAST_web.Models.Blogpost>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h1>BlogPost</h1>
+    <br>
+
+    @foreach (var item in Model)
+    {
+        <h3>@Html.ActionLink(item.title, "BlogPostContent", "Home", new { id = item.Id, title = item.title, content = item.content }, null)</h3>
+    }
+
+    <div>
+
+    </div>
+</body>
+</html>
