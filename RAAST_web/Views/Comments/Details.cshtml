@@ -1,0 +1,51 @@
+﻿@model RAAST_web.Models.Comment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/adminNavLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Comment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Blogpost.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blogpost.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.commenter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.commenter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cu_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cu_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
