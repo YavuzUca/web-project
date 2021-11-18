@@ -10,8 +10,18 @@ namespace RAAST_web.Controllers
     public class AdminController : Controller
     {
         // GET: Editor
+        
         public ActionResult AddEditor()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddEditor(User user)
+        {
+            Data data = new Data();
+            data.Users.Add(user);
+            data.SaveChanges();
+            ViewBag.message = "User addded!";
             return View();
         }
         public ActionResult Verify()

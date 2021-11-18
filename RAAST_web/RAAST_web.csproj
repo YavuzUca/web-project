@@ -142,8 +142,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BlogpostsController.cs" />
     <Compile Include="Controllers\EditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,7 +225,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_LayoutPage1.cshtml" />
     <Content Include="Views\adminNavLayout.cshtml" />
-    <Content Include="Views\Admin\AddEditor.cshtml" />
+    <Content Include="Views\Admin\Archieved_AddEditor.cshtml" />
     <Content Include="Views\Admin\Success.cshtml" />
     <Content Include="Views\editorNavLayout.cshtml" />
     <Content Include="Views\Editor\AddArticle.cshtml" />
@@ -234,6 +236,16 @@
     <Content Include="Views\Home\InfoBoot.cshtml" />
     <Content Include="Views\Admin\ShowEditors.cshtml" />
     <Content Include="Views\Admin\ShowClientList.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Blogposts\Create.cshtml" />
+    <Content Include="Views\Blogposts\Delete.cshtml" />
+    <Content Include="Views\Blogposts\Details.cshtml" />
+    <Content Include="Views\Blogposts\Edit.cshtml" />
+    <Content Include="Views\Blogposts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
