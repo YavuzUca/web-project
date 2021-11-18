@@ -220,9 +220,8 @@
     <Content Include="Views\Editor\Verify.cshtml" />
     <Content Include="Views\Home\Credits.cshtml" />
     <Content Include="Views\Home\InfoBoot.cshtml" />
-    <Content Include="Views\Editor\BlogPost_Editor.cshtml" />
-    <Content Include="Views\Home\BlogPost.cshtml" />
-    <Content Include="Views\Editor\BlogPostContent.cshtml" />
+    <Content Include="Views\Editor\BlogPostEditor.cshtml" />
+    <Content Include="Views\Editor\BlogPostEditorContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

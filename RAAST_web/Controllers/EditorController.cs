@@ -23,11 +23,11 @@ namespace RAAST_web.Controllers
         {
             return View("Success");
         }
-        public ActionResult BlogPost_Editor()
+        public ActionResult BlogPostEditor()
         {
             return View();
         }
-        public ActionResult BlogPostContent(int id)
+        public ActionResult BlogPostEditorContent(int id)
         {
             ViewBag.idFromUrl = id;
             string res = "";

@@ -1,5 +1,8 @@
 ﻿@{
     Layout = "~/Views/editorNavLayout.cshtml";
+    string connectionstring;
+    connectionstring = @"Data source=webraast.database.windows.net;Initial Catalog=webraast; User ID=raastweb;Password=6Y45wpX!n";
+    connection = new sql
 }
 
 <!DOCTYPE html>
@@ -15,8 +18,9 @@
 
     @for (int i = 0; i < 100; i++)
     {
-        <h3>@Html.ActionLink($"Header {i}", "BlogPostContent", "Editor", new { id = i },null)</h3>
+        <h3>@Html.ActionLink($"Header {i}", "BlogPostEditorContent", "Editor", new { id = i },null)</h3>
     }
+    
     <div>
 
     </div>
