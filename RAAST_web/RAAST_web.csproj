@@ -153,7 +153,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Blogpost.cs" />
-    <Compile Include="Models\Boat_Information.cs" />
+    <Compile Include="Models\Boat_Info.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Data.cs" />
     <Compile Include="Models\Newsletter.cs" />

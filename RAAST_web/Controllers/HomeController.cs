@@ -30,8 +30,10 @@ namespace RAAST_web.Controllers
         {
             ViewBag.Message = "This is the information about our boat.";
 
+            var data = new Data();
 
-            return View();
+            return View(data.Boat_Info);
+
         }
         private Data db = new Data();
         public ActionResult BlogPost()
