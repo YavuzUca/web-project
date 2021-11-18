@@ -13,7 +13,7 @@
     <h1>BlogPost</h1>
     <br>
 
-    @foreach (var item in Model.ToList())
+    @foreach (var item in Model)
     {
         <h3>@Html.ActionLink(item.title, "BlogPostContent", "Home", new { id = item.Id, title = item.title, content = item.content }, null)</h3>
     }

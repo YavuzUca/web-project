@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using RAAST_web.Models;
+using System.Data.Entity;
 
 namespace RAAST_web.Controllers
 {
@@ -35,17 +33,18 @@ namespace RAAST_web.Controllers
 
             return View();
         }
+        private Data db = new Data();
         public ActionResult BlogPost()
         {
-            return View();
+            var blogposts = db.Blogposts.Include(b => b.User);
+            return View(blogposts.ToList());
         }
         public ActionResult BlogPostContent(int id, string title, string content)
         {
             ViewBag.idFromUrl = id;
-            Models.Blogpost blogpost = new Models.Blogpost();
             ViewBag.Title = title;
             ViewBag.Description = content;
-            
+
             //handle data
             return View();
         }
