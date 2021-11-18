@@ -1,4 +1,7 @@
-﻿@{
+﻿@model IEnumerable<RAAST_web.Models.Boat_Info>
+
+
+@{
     ViewBag.Title = "Boat information";
 }
 
@@ -35,14 +38,26 @@
             </div>
 
             <p class="centeredWhite">This is the current speed of the boat</p>
+            <div class="centeredWhite">
+
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed)
+                
+            </div>
         </div>
+
+
 
         <div class="col-lg-offset-2 col-lg-5 moduleStyle">
             <div class="headerDiv">
                 <h3 class="centeredWhite ct">Wind force</h3>
             </div>
 
-            <p class="centeredWhite">This is the current wind force</p>
+            <p class="centeredWhite">This is the current wind force </p>
+            <div class="centeredWhite">
+
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count -1].wind_Speed)
+            </div>
+
         </div>
 
         <div class="col-lg-5 moduleStyle">
@@ -51,25 +66,36 @@
             </div>
 
             <p class="centeredWhite">This is the current temperature</p>
+            <div class="centeredWhite">
+
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature)
+            </div>
         </div>
         <div class="col-lg-offset-2 col-lg-5 moduleStyle">
             <div class="headerDiv">
-                <h3 class="centeredWhite ct">Direction</h3>
+                <h3 class="centeredWhite ct">Wind direction</h3>
             </div>
 
-            <p class="centeredWhite">This is the current direction of the boat</p>
+            <p class="centeredWhite">This is the current direction of the wind</p>
+            <div class="centeredWhite">
+
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Direction)
+            </div>
         </div>
     </div>
-    <script>
-        var map = L.map('map').setView([51.91045640625668, 4.450265871598626], 13);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+    
 
-        L.marker([51.91045640625668, 4.450265871598626]).addTo(map)
-            .bindPopup('Home sweet home')
-            .openPopup();
-    </script>
+        <script>
+            var map = L.map('map').setView([51.91045640625668, 4.450265871598626], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([51.91045640625668, 4.450265871598626]).addTo(map)
+                .bindPopup('Home sweet home')
+                .openPopup();
+        </script>
 </body>
 </html>

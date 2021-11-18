@@ -8,12 +8,12 @@ namespace RAAST_web.Models
     public partial class Data : DbContext
     {
         public Data()
-            : base("name=Data")
+            : base("name=DataContext")
         {
         }
 
         public virtual DbSet<Blogpost> Blogposts { get; set; }
-        public virtual DbSet<Boat_Information> Boat_Information { get; set; }
+        public virtual DbSet<Boat_Info> Boat_Info { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Newsletter> Newsletters { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -41,13 +41,8 @@ namespace RAAST_web.Models
                 .WithOptional(e => e.Blogpost)
                 .HasForeignKey(e => e.blogpost_id);
 
-            modelBuilder.Entity<Boat_Information>()
-                .Property(e => e.module_name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Boat_Information>()
-                .Property(e => e.module_value)
-                .IsUnicode(false);
+            modelBuilder.Entity<Boat_Info>()
+                .Property(e => e.Date_Time);
 
             modelBuilder.Entity<Comment>()
                 .Property(e => e.commenter)
