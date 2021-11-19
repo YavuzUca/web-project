@@ -166,6 +166,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.test.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\homepage.css" />
     <Content Include="css\styletem.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -243,11 +244,6 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Blogposts\Create.cshtml" />
-    <Content Include="Views\Blogposts\Delete.cshtml" />
-    <Content Include="Views\Blogposts\Details.cshtml" />
-    <Content Include="Views\Blogposts\Edit.cshtml" />
-    <Content Include="Views\Blogposts\Index.cshtml" />
     <Content Include="Views\Comments\Create.cshtml" />
     <Content Include="Views\Comments\Delete.cshtml" />
     <Content Include="Views\Comments\Details.cshtml" />
@@ -258,6 +254,12 @@
     <Content Include="Views\Newsletters\Details.cshtml" />
     <Content Include="Views\Newsletters\Edit.cshtml" />
     <Content Include="Views\Newsletters\Index.cshtml" />
+    <Content Include="Views\Blogposts\Create.cshtml" />
+    <Content Include="Views\Blogposts\Delete.cshtml" />
+    <Content Include="Views\Blogposts\Details.cshtml" />
+    <Content Include="Views\Blogposts\Edit.cshtml" />
+    <Content Include="Views\Blogposts\Index.cshtml" />
+    <Content Include="Views\Users\ErrorPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
