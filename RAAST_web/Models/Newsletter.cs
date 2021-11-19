@@ -13,7 +13,5 @@ namespace RAAST_web.Models
 
         [StringLength(50)]
         public string email { get; set; }
-
-        public DateTime? time_date { get; set; }
     }
 }
