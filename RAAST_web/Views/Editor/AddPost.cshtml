@@ -1,38 +1,24 @@
-﻿@{
+﻿@model SendMail.Models.MailModel
+@{
     Layout = "~/Views/editorNavLayout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-    <style>
-        textarea{
-            max-width: 400px !important;
-        }
-    </style>
-</head>
-<body>
-    <h2>
-        Add newsletter
-    </h2>
-    <form method="post" action="Verify">
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input required type="text" class="form-control" id="title" placeholder="Enter Title">
-        </div>
-        <div class="form-group">
-            <label for="header">Header</label>
-            <input required type="text" class="form-control" id="header" placeholder="Header">
-        </div>
-        <div class="form-group">
-            <label for="text">Content</label>
-            <textarea class="form-control" id="textArea1" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Publish newsletter</button>
-    </form>
-
-</body>
-</html>
+<h2>Newsletterrrrrrrrrrr</h2>
+<fieldset>
+    <legend>
+        Send Email
+    </legend>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <p>From: </p>
+        <p>@Html.TextBoxFor(m => m.From)</p>
+        <p>To: </p>
+        <p>@Html.TextBoxFor(m => m.To)</p>
+        <p>Subject: </p>
+        <p>@Html.TextBoxFor(m => m.Subject)</p>
+        <p>Body: </p>
+        <p>@Html.TextAreaFor(m => m.Body)</p>
+        <input type="submit" value="Send" />
+    }
+</fieldset>
