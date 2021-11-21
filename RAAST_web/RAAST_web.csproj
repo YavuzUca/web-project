@@ -155,6 +155,7 @@
     <Compile Include="Models\Boat_Info.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Data.cs" />
+    <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\Newsletter.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -231,14 +232,12 @@
     <Content Include="Views\Admin\Archieved_AddEditor.cshtml" />
     <Content Include="Views\Admin\Success.cshtml" />
     <Content Include="Views\editorNavLayout.cshtml" />
-    <Content Include="Views\Editor\AddArticle.cshtml" />
     <Content Include="Views\Editor\Success.cshtml" />
     <Content Include="Views\Editor\AddPost.cshtml" />
     <Content Include="Views\Editor\Verify.cshtml" />
     <Content Include="Views\Home\Credits.cshtml" />
     <Content Include="Views\Home\InfoBoot.cshtml" />
     <Content Include="Views\Admin\ShowEditors.cshtml" />
-    <Content Include="Views\Admin\ShowClientList.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />

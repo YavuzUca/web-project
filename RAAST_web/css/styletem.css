@@ -3122,14 +3122,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-  color: #1fa12e;
-  border-color: #1fa12e;
+  color: #fff;
+  border-color: #fff;
 }
 
 .btn-outline-secondary:hover {
-  color: #fff;
-  background-color: #1fa12e;
-  border-color: #1fa12e;
+  color: #dc3545;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .btn-outline-secondary:focus,
