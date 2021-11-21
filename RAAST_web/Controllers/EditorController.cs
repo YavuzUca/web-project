@@ -25,7 +25,7 @@ namespace RAAST_web.Controllers
         }
 
         [HttpPost]
-        public ViewResult AddPost(SendMail.Models.MailModel _objModelMail)
+        public ViewResult AddPost(RAAST_web.Models.MailModel _objModelMail)
         {
             if (ModelState.IsValid)
             {
