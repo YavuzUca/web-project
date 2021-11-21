@@ -24,14 +24,22 @@ namespace RAAST_web.Controllers
             return View();
         }
 
+       //Page to send an email to all subcribers
         [HttpPost]
         public ViewResult AddPost(RAAST_web.Models.MailModel _objModelMail)
         {
+            List<string> emails = GetEmails();
+            //sets up mailmessage to be sent
+
             if (ModelState.IsValid)
             {
                 MailMessage mail = new MailMessage();
-                mail.To.Add(_objModelMail.To);
-                mail.From = new MailAddress(_objModelMail.From);
+                foreach(string email in emails)
+                {
+                    mail.To.Add(email);
+                }
+                
+                mail.From = new MailAddress("newsletter.hr.raast@gmail.com");
                 mail.Subject = _objModelMail.Subject;
                 string Body = _objModelMail.Body;
                 mail.Body = Body;
@@ -49,6 +57,23 @@ namespace RAAST_web.Controllers
             {
                 return View();
             }
+        }
+
+        //Gets all emails from database as a list of strings.
+        public List<string> GetEmails()
+        {
+            Data data = new Data();
+            List<Newsletter> newsletters = data.Newsletters.ToList();
+
+            List<string> emails = new List<string>();
+
+            foreach(Newsletter email in newsletters)
+            {
+                emails.Add(email.email);
+            }
+
+            return emails;
+
         }
 
         public ActionResult Verify()

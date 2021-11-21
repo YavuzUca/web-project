@@ -12,10 +12,7 @@
     @using (Html.BeginForm())
     {
         @Html.ValidationSummary()
-        <p>From (newsletter.hr.raast@gmail.com): </p>
-        <p>@Html.TextBoxFor(m => m.From)</p>
-        <p>To: </p>
-        <p>@Html.TextBoxFor(m => m.To)</p>
+        
         <p>Subject: </p>
         <p>@Html.TextBoxFor(m => m.Subject)</p>
         <p>Body: </p>
