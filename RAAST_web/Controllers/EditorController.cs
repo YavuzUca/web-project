@@ -36,7 +36,7 @@ namespace RAAST_web.Controllers
                 MailMessage mail = new MailMessage();
                 foreach(string email in emails)
                 {
-                    mail.To.Add(email);
+                    mail.Bcc.Add(email);
                 }
                 
                 mail.From = new MailAddress("newsletter.hr.raast@gmail.com");
