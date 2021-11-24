@@ -38,6 +38,7 @@ namespace RAAST_web.Controllers
         // GET: Users/Create
         public ActionResult Create()
         {
+            ViewBag.role = new SelectList(Enum.GetValues(typeof(Role)), "Select role");
             return View();
         }
 
@@ -46,7 +47,7 @@ namespace RAAST_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,fullName,email,passWord_hash")] User user)
+        public ActionResult Create([Bind(Include = "Id,fullName,email,passWord_hash,role")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +56,7 @@ namespace RAAST_web.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.role = new SelectList(Enum.GetValues(typeof(Role)), "Select role", user.role);
             return View(user);
         }
 
@@ -70,6 +72,7 @@ namespace RAAST_web.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.role = new SelectList(Enum.GetValues(typeof(Role)), user.role);
             return View(user);
         }
 
@@ -78,7 +81,7 @@ namespace RAAST_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,fullName,email,passWord_hash")] User user)
+        public ActionResult Edit([Bind(Include = "Id,fullName,email,passWord_hash,role")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +89,7 @@ namespace RAAST_web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.role = new SelectList(Enum.GetValues(typeof(Role)), user.role);
             return View(user);
         }
 
