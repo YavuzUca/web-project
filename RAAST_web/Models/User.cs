@@ -27,8 +27,16 @@ namespace RAAST_web.Models
 
         [Required]
         public string passWord_hash { get; set; }
+        
+        public string role { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Blogpost> Blogposts { get; set; }
+    }
+
+    public enum Role
+    {
+        Admin,
+        Editor
     }
 }

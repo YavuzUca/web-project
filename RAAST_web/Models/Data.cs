@@ -73,6 +73,9 @@ namespace RAAST_web.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
+               .Property(e => e.role);
+
+            modelBuilder.Entity<User>()
                 .HasMany(e => e.Blogposts)
                 .WithOptional(e => e.User)
                 .HasForeignKey(e => e.user_id);
