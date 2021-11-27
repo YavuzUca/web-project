@@ -62,10 +62,13 @@ namespace RAAST_web.Controllers
             {
                 db.Newsletters.Add(newsletter);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.Message = "Thank you for subscribing!";
+                return View();
             }
+            else
+                ViewBag.Message = "Please enter a valid email-address";
+                return View();
 
-            return View(newsletter);
         }
     }
 }
