@@ -8,18 +8,42 @@ namespace RAAST_web.Models
     public partial class Data : DbContext
     {
         public Data()
-            : base("name=DataContext")
+            : base("name=Data")
         {
         }
 
-        public virtual DbSet<Blogpost> Blogposts { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<Blogpost> Blogpost { get; set; }
         public virtual DbSet<Boat_Info> Boat_Info { get; set; }
-        public virtual DbSet<Comment> Comments { get; set; }
-        public virtual DbSet<Newsletter> Newsletters { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Comment> Comment { get; set; }
+        public virtual DbSet<Newsletter> Newsletter { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AspNetRoles>()
+                .HasMany(e => e.AspNetUsers)
+                .WithMany(e => e.AspNetRoles)
+                .Map(m => m.ToTable("AspNetUserRoles").MapLeftKey("RoleId").MapRightKey("UserId"));
+
+            modelBuilder.Entity<AspNetUsers>()
+                .HasMany(e => e.AspNetUserClaims)
+                .WithRequired(e => e.AspNetUsers)
+                .HasForeignKey(e => e.UserId);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .HasMany(e => e.AspNetUserLogins)
+                .WithRequired(e => e.AspNetUsers)
+                .HasForeignKey(e => e.UserId);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .HasMany(e => e.Blogpost)
+                .WithOptional(e => e.AspNetUsers)
+                .HasForeignKey(e => e.asp_user_id);
+
             modelBuilder.Entity<Blogpost>()
                 .Property(e => e.title)
                 .IsUnicode(false);
@@ -37,12 +61,9 @@ namespace RAAST_web.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Blogpost>()
-                .HasMany(e => e.Comments)
+                .HasMany(e => e.Comment)
                 .WithOptional(e => e.Blogpost)
                 .HasForeignKey(e => e.blogpost_id);
-
-            modelBuilder.Entity<Boat_Info>()
-                .Property(e => e.Date_Time);
 
             modelBuilder.Entity<Comment>()
                 .Property(e => e.commenter)
@@ -59,26 +80,6 @@ namespace RAAST_web.Models
             modelBuilder.Entity<Newsletter>()
                 .Property(e => e.email)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.fullName)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.email)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.passWord_hash)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-               .Property(e => e.role);
-
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.Blogposts)
-                .WithOptional(e => e.User)
-                .HasForeignKey(e => e.user_id);
         }
     }
 }

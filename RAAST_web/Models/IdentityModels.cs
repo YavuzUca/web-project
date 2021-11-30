@@ -21,7 +21,7 @@ namespace RAAST_web.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DataConnect", throwIfV1Schema: false)
+            : base("Data", throwIfV1Schema: false)
         {
         }
 
