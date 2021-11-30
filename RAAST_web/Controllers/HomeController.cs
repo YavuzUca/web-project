@@ -38,7 +38,7 @@ namespace RAAST_web.Controllers
         private Data db = new Data();
         public ActionResult BlogPost()
         {
-            var blogposts = db.Blogposts.Include(b => b.User);
+            var blogposts = db.Blogpost.Include(b => b.AspNetUsers);
             return View(blogposts.ToList());
         }
         public ActionResult BlogPostContent(int id, string title, string content)
@@ -60,7 +60,7 @@ namespace RAAST_web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Newsletters.Add(newsletter);
+                db.Newsletter.Add(newsletter);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

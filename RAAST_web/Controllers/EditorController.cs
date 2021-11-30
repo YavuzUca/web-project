@@ -63,7 +63,7 @@ namespace RAAST_web.Controllers
         public List<string> GetEmails()
         {
             Data data = new Data();
-            List<Newsletter> newsletters = data.Newsletters.ToList();
+            List<Newsletter> newsletters = data.Newsletter.ToList();
 
             List<string> emails = new List<string>();
 
