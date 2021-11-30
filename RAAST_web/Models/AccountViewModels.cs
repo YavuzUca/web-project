@@ -51,12 +51,12 @@ namespace RAAST_web.Models
         [Required]
         [Display(Name = "Email")]
         [EmailAddress]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public string passWord_hash { get; set; }
+        public string Password { get; set; }
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
@@ -65,18 +65,15 @@ namespace RAAST_web.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Full Name")]
-        public string fullName { get; set; }
-        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public string passWord_hash { get; set; }
+        public string Password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
