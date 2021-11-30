@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using RAAST_web.Models;
 using System.Data.Entity;
+using System.Net.Mail;
 
 namespace RAAST_web.Controllers
 {
@@ -62,10 +63,13 @@ namespace RAAST_web.Controllers
             {
                 db.Newsletter.Add(newsletter);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.Message = "Thank you for subscribing!";
+                return View();
             }
+            else
+                ViewBag.Message = "Please enter a valid email-address";
+                return View();
 
-            return View(newsletter);
         }
     }
 }

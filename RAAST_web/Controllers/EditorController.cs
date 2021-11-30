@@ -10,15 +10,6 @@ namespace RAAST_web.Controllers
 {
     public class EditorController : Controller
     {
-        
-
-
-        // GET: Editor
-        public ActionResult AddArticle()
-        {
-            return View();
-        }
-
         public ActionResult AddPost()
         {
             return View();
@@ -75,11 +66,5 @@ namespace RAAST_web.Controllers
             return emails;
 
         }
-
-        public ActionResult Verify()
-        {
-            return View("Success");
-        }
-        
     }
 }
