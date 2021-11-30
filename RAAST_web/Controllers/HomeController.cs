@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using RAAST_web.Models;
 using System.Data.Entity;
+using System.Net.Mail;
 
 namespace RAAST_web.Controllers
 {

@@ -141,7 +141,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogpostsController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\EditorController.cs" />
@@ -229,15 +228,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_LayoutPage1.cshtml" />
     <Content Include="Views\adminNavLayout.cshtml" />
-    <Content Include="Views\Admin\Archieved_AddEditor.cshtml" />
-    <Content Include="Views\Admin\Success.cshtml" />
     <Content Include="Views\editorNavLayout.cshtml" />
-    <Content Include="Views\Editor\Success.cshtml" />
     <Content Include="Views\Editor\AddPost.cshtml" />
-    <Content Include="Views\Editor\Verify.cshtml" />
     <Content Include="Views\Home\Credits.cshtml" />
     <Content Include="Views\Home\InfoBoot.cshtml" />
-    <Content Include="Views\Admin\ShowEditors.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />

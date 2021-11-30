@@ -3,16 +3,16 @@
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/adminNavLayout.cshtml";
+    Layout = "~/Views/editorNavLayout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Edit a blogpost</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Blogpost</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
