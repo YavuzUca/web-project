@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using TESTAUTH.Models;
+using RAAST_web.Models;
 
-namespace TESTAUTH.Controllers
+namespace  RAAST_web.Controllers
 {
     [Authorize]
     public class ManageController : Controller
