@@ -5,24 +5,63 @@
 
     <!DOCTYPE html>
 <html>
-    <body>
-        <h3>@Model.title</h3>
-        <p>@Model.content</p>
+<body>
+    <h3>@Model.title</h3>
+    <p>@Model.content</p>
+    <br />
+    <h2>Comments</h2>
+    @foreach ( var item in Model.Comment)
+    {
+    <p>
+        ---------------------------
         <br />
-        <h2>Comments</h2>
-        @foreach ( var item in Model.Comments)
-            {
-                <p>
-                    ---------------------------
-                    <br />
-                    Name: @item.commenter
-                    <br />
-                    Cpntent: @item.content
-                    <br />
-                    Date: @item.cu_date
-                    <br />
-                    ---------------------------
-                </p>
-            }
-    </body>
+        Name: @item.commenter
+        <br />
+        Cpntent: @item.content
+        <br />
+        Date: @item.cu_date
+        <br />
+        ---------------------------
+    </p>
+    }
+    <div class="form-group">
+        @Html.LabelFor(model => model.blogpost_id, "Blogpost Title", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("blogpost_id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.blogpost_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.commenter, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.commenter, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.commenter, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.content, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.cu_date, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.cu_date, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.cu_date, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+
+</body>
 </html>

@@ -15,7 +15,7 @@
 
     @foreach (var item in Model)
     {
-        <h3>@Html.ActionLink(item.title, "BlogPostContent", "Home", new { id = item.Id, title = item.title, content = item.content, cu_date = item.cu_date, Comments = item.Comments }, null)</h3>
+        <h3>@Html.ActionLink(item.title, "BlogPostContent", "Home", new { id = item.Id, title = item.title, content = item.content, cu_date = item.cu_date, Comment = item.Comment }, null)</h3>
     }
 
     <div>

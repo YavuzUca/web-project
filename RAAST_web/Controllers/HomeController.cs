@@ -44,7 +44,7 @@ namespace RAAST_web.Controllers
         }
         public ActionResult BlogPostContent(int id, string title, string content)
         {
-            var blogposts = db.Blogposts.Find(id);
+            var blogposts = db.Blogpost.Find(id);
             return View(blogposts);
         }
         
