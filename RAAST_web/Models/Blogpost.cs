@@ -12,12 +12,10 @@ namespace RAAST_web.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Blogpost()
         {
-            Comments = new HashSet<Comment>();
+            Comment = new HashSet<Comment>();
         }
 
         public int Id { get; set; }
-
-        public int? user_id { get; set; }
 
         [StringLength(50)]
         public string title { get; set; }
@@ -31,9 +29,12 @@ namespace RAAST_web.Models
         [StringLength(50)]
         public string slug { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comment> Comments { get; set; }
+        [StringLength(128)]
+        public string asp_user_id { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual AspNetUsers AspNetUsers { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comment> Comment { get; set; }
     }
 }

@@ -22,7 +22,6 @@ namespace RAAST_web.Models
 
         public int? boat_Speed { get; set; }
 
-        
         public DateTime? Date_Time { get; set; }
     }
 }

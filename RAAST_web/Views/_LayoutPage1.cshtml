@@ -17,24 +17,15 @@
     <!--header-->
     <header id="site-header" class="fixed-top">
         <div class="container">
-            
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <h1>
-                </h1>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa icon-expand fa-bars"></span>
-                    <span class="fa icon-close fa-times"></span>
-                </button>
-
+            <nav class="navbar navbar-expand-lg ">
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Info", "InfoBoot", "Home", new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Credits", "Credits", "Home", new { @class = "nav-link" })</li>
+                        <li class="navbar item">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
+                        <li class="navbar item">@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
+                        <li class="navbar item">@Html.ActionLink("Info", "InfoBoot", "Home", new { @class = "nav-link" })</li>
+                        <li class="navbar item">@Html.ActionLink("Credits", "Credits", "Home", new { @class = "nav-link" })</li>
                     </ul>
-
+                    @Html.Partial("_LoginPartial")
                 </div>
             </nav>
         </div>

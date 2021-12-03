@@ -11,6 +11,8 @@ namespace RAAST_web.Models
     {
         public int Id { get; set; }
 
+        [DataType( DataType.EmailAddress )]
+        [Required(ErrorMessage = "Enter an email-address. It cannot be empty")]
         [StringLength(50)]
         public string email { get; set; }
     }
