@@ -1,17 +1,28 @@
 ﻿@{
     Layout = "~/Views/editorNavLayout.cshtml";
 }
-@model IEnumerable<RAAST_web.Models.Blogpost>
+@model RAAST_web.Models.Blogpost
 
     <!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title></title>
-    </head>
+<html>
     <body>
-        <h3>@ViewBag.Title</h3>
-        <p>@ViewBag.Description</p>
+        <h3>@Model.title</h3>
+        <p>@Model.content</p>
+        <br />
+        <h2>Comments</h2>
+        @foreach ( var item in Model.Comments)
+            {
+                <p>
+                    ---------------------------
+                    <br />
+                    Name: @item.commenter
+                    <br />
+                    Cpntent: @item.content
+                    <br />
+                    Date: @item.cu_date
+                    <br />
+                    ---------------------------
+                </p>
+            }
     </body>
 </html>

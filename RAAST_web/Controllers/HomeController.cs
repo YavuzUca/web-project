@@ -43,12 +43,8 @@ namespace RAAST_web.Controllers
         }
         public ActionResult BlogPostContent(int id, string title, string content)
         {
-            ViewBag.idFromUrl = id;
-            ViewBag.Title = title;
-            ViewBag.Description = content;
-
-            //handle data
-            return View();
+            var blogposts = db.Blogposts.Find(id);
+            return View(blogposts);
         }
         
         // POST: Blogposts/Create
