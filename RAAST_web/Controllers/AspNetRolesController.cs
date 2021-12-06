@@ -10,6 +10,7 @@ using RAAST_web.Models;
 
 namespace RAAST_web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AspNetRolesController : Controller
     {
         private Data db = new Data();

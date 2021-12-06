@@ -10,6 +10,7 @@ using RAAST_web.Models;
 
 namespace RAAST_web.Controllers
 {
+    [Authorize(Roles = "Admin, Editor")]
     public class NewsletterController : Controller
     {
         private Data db = new Data();

@@ -6,14 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using RAAST_web.Models;
 
 namespace RAAST_web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AspNetUsersController : Controller
     {
         private Data db = new Data();
-
+        
         // GET: AspNetUsers
         public ActionResult Index()
         {
