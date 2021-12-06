@@ -11,7 +11,7 @@
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>
     <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
     //Fields for new editor
@@ -39,6 +39,15 @@
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
         </div>
     </div>
+    /*
+    <div class="form-group">
+        @Html.LabelFor(model => model.asp_user_id, "UserRoles", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("asp_user_id", ViewData["asp_user_id"] as IEnumerable<SelectListItem>)
+            @Html.ValidationMessageFor(model => model.asp_user_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    */
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />
