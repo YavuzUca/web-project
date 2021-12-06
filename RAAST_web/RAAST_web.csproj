@@ -237,6 +237,8 @@
     <Content Include="images\team2.jpg" />
     <Content Include="images\team3.jpg" />
     <Content Include="images\team4.jpg" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.3.1.min.js" />
     <Content Include="js\owl.carousel.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
