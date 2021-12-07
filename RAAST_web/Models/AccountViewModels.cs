@@ -23,6 +23,25 @@ namespace RAAST_web.Models
         public bool RememberMe { get; set; }
     }
 
+    public class BlogpostCommentViewModel
+    {
+        public int BlogId { get; set; }
+
+        [StringLength(50)]
+        public string title { get; set; }
+
+        [StringLength(50)]
+        public string Blogcontent { get; set; }
+
+        public int CommentId { get; set; }
+
+        [StringLength(50)]
+        public string commenter { get; set; }
+
+        [StringLength(50)]
+        public string Commentcontent { get; set; }
+    }
+
     public class VerifyCodeViewModel
     {
         [Required]

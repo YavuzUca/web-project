@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using RAAST_web.Models;
 using System.Data.Entity;
 using System.Net.Mail;
+using System.Collections.Generic;
 
 namespace RAAST_web.Controllers
 {
@@ -45,11 +46,19 @@ namespace RAAST_web.Controllers
 
         public ActionResult BlogPostContent(int id, string title, string content)
         {
-            //
+            ViewBag.Title = title;
+            ViewBag.Content = content;
+            ViewBag.Id = id;
             var mymodel = db.Blogpost.Find(id);
+            ViewBag.list = new List<Comment>(mymodel.Comment);
             return View(mymodel);
         }
-        
+        [HttpPost]
+        public ActionResult BlogPostContent(int id, Comment comment)
+        { 
+            return View(comment);
+        }
+
         // POST: Blogposts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
