@@ -42,10 +42,12 @@ namespace RAAST_web.Controllers
             var blogposts = db.Blogpost.Include(b => b.AspNetUsers);
             return View(blogposts.ToList());
         }
+
         public ActionResult BlogPostContent(int id, string title, string content)
         {
-            var blogposts = db.Blogpost.Find(id);
-            return View(blogposts);
+            //
+            var mymodel = db.Blogpost.Find(id);
+            return View(mymodel);
         }
         
         // POST: Blogposts/Create
