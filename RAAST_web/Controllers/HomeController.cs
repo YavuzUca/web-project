@@ -8,6 +8,7 @@ namespace RAAST_web.Controllers
 {
     public class HomeController : Controller
     {
+        private Data db = new Data();
         public ActionResult Index()
         {
             return View();
@@ -36,12 +37,12 @@ namespace RAAST_web.Controllers
             return View(data.Boat_Info);
 
         }
-        private Data db = new Data();
         public ActionResult BlogPost()
         {
             var blogposts = db.Blogpost.Include(b => b.AspNetUsers);
             return View(blogposts.ToList());
         }
+        [Route("Home/Blogpost/{id}")]
         public ActionResult BlogPostContent(int id, string title, string content)
         {
             ViewBag.idFromUrl = id;
