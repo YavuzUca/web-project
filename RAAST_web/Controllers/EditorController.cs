@@ -8,17 +8,9 @@ using RAAST_web.Models;
 
 namespace RAAST_web.Controllers
 {
+    [Authorize(Roles = "Admin, Editor")]
     public class EditorController : Controller
     {
-        
-
-
-        // GET: Editor
-        public ActionResult AddArticle()
-        {
-            return View();
-        }
-
         public ActionResult AddPost()
         {
             return View();
@@ -63,7 +55,7 @@ namespace RAAST_web.Controllers
         public List<string> GetEmails()
         {
             Data data = new Data();
-            List<Newsletter> newsletters = data.Newsletters.ToList();
+            List<Newsletter> newsletters = data.Newsletter.ToList();
 
             List<string> emails = new List<string>();
 
@@ -75,11 +67,5 @@ namespace RAAST_web.Controllers
             return emails;
 
         }
-
-        public ActionResult Verify()
-        {
-            return View("Success");
-        }
-        
     }
 }
