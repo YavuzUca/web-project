@@ -68,6 +68,9 @@ namespace RAAST_web.Models
         [Display(Name = "Username")]
         public string Username { get; set; }
 
+        [Phone]
+        [Display(Name = "Phonenumber")]
+        public string PhoneNumber { get; set; }
 
         [Required]
         [EmailAddress]
