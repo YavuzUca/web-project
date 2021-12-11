@@ -117,8 +117,8 @@ namespace  RAAST_web.Controllers
                 return View(model);
             }
             // Generate the token and send it
-            var code = await UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), model.Number);
-            if (UserManager.SmsService != null)
+            await UserManager.SetPhoneNumberAsync(User.Identity.GetUserId(), model.Number);
+            /*if (UserManager.SmsService != null)
             {
                 var message = new IdentityMessage
                 {
@@ -127,7 +127,8 @@ namespace  RAAST_web.Controllers
                 };
                 await UserManager.SmsService.SendAsync(message);
             }
-            return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
+            */
+            return RedirectToAction("Index");
         }
 
         //

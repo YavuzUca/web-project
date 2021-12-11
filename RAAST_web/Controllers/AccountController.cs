@@ -161,7 +161,7 @@ namespace RAAST_web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser {Email = model.Email, UserName = model.Username};
+                var user = new ApplicationUser {Email = model.Email, UserName = model.Username, PhoneNumber = model.PhoneNumber};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 
                 if (result.Succeeded)
