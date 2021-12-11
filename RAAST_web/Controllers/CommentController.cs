@@ -49,13 +49,19 @@ namespace RAAST_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Create([Bind(Include = "Id,blogpost_id,commenter,content,cu_date")] Comment comment)
         {
             if (ModelState.IsValid)
             {
                 db.Comment.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Request.IsAuthenticated)
+                {
+
+                    return RedirectToAction("Index");
+                }
+                return View("Home/BlogPost");
             }
 
             ViewBag.blogpost_id = new SelectList(db.Blogpost, "Id", "title", comment.blogpost_id);
