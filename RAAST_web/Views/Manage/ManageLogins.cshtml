@@ -2,6 +2,18 @@
 @using Microsoft.Owin.Security
 @{
     ViewBag.Title = "Manage your external logins";
+    if (Request.IsAuthenticated)
+    {
+        if (User.IsInRole("Admin"))
+        {
+            Layout = "~/Views/adminNavLayout.cshtml";
+        }
+        else
+        {
+            Layout = "~/Views/editorNavLayout.cshtml";
+        }
+
+    }
 }
 
 <h2>@ViewBag.Title.</h2>

@@ -2,7 +2,18 @@
 
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/editorNavLayout.cshtml";
+    if (Request.IsAuthenticated)
+    {
+        if (User.IsInRole("Admin"))
+        {
+            Layout = "~/Views/adminNavLayout.cshtml";
+        }
+        else
+        {
+            Layout = "~/Views/editorNavLayout.cshtml";
+        }
+
+    }
 }
 
 <h2>Delete</h2>
