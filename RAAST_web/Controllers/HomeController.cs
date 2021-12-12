@@ -44,14 +44,13 @@ namespace RAAST_web.Controllers
             return View(blogposts.ToList());
         }
         [Route("Home/Blogpost/{id}")]
-        public ActionResult BlogPostContent(int id, string title, string content)
+        public ActionResult BlogPostContent(int id)
         {
-            ViewBag.idFromUrl = id;
-            ViewBag.Title = title;
-            ViewBag.Description = content;
+            ViewBag.id = id;
 
+            var mymodel = db.Blogpost.Find(id);
             //handle data
-            return View();
+            return View(mymodel);
         }
         
         // POST: Blogposts/Create
