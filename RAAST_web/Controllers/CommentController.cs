@@ -39,9 +39,12 @@ namespace RAAST_web.Controllers
         }
 
         // GET: Comment/Create
-        public ActionResult Create()
+        public ActionResult Create(int blogpostid)
         {
             ViewBag.blogpost_id = new SelectList(db.Blogpost, "Id", "title");
+
+            ViewBag.Time = DateTime.Now;
+            ViewBag.blog_id = blogpostid;
             return View();
         }
 
