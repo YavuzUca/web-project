@@ -24,7 +24,7 @@
         </p>
     }
 <div>
-    @Html.ActionLink("Add Comment", "Create", "Comment")
+    @Html.ActionLink("Add Comment", "Create", "Comment", new {blogpostid = Model.Id}, null)
 </div>
 </body>
 </html>

@@ -49,6 +49,7 @@ namespace RAAST_web.Controllers
             ViewBag.Title = title;
             ViewBag.Content = content;
             ViewBag.Id = id;
+            
             var mymodel = db.Blogpost.Find(id);
             ViewBag.list = new List<Comment>(mymodel.Comment);
             return View(mymodel);
