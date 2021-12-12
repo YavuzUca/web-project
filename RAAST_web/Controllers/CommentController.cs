@@ -10,11 +10,11 @@ using RAAST_web.Models;
 
 namespace RAAST_web.Controllers
 {
-    [Authorize(Roles = "Admin, Editor")]
     public class CommentController : Controller
     {
         private Data db = new Data();
 
+        [Authorize(Roles = "Admin, Editor")]
         // GET: Comment
         public ActionResult Index()
         {
@@ -22,6 +22,7 @@ namespace RAAST_web.Controllers
             return View(comment.ToList());
         }
 
+        [Authorize(Roles = "Admin, Editor")]
         // GET: Comment/Details/5
         public ActionResult Details(int? id)
         {
@@ -49,13 +50,19 @@ namespace RAAST_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Create([Bind(Include = "Id,blogpost_id,commenter,content,cu_date")] Comment comment)
         {
             if (ModelState.IsValid)
             {
                 db.Comment.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Request.IsAuthenticated)
+                {
+
+                    return RedirectToAction("Index");
+                }
+                return RedirectToAction("BlogPost", "Home");
             }
 
             ViewBag.blogpost_id = new SelectList(db.Blogpost, "Id", "title", comment.blogpost_id);
@@ -63,6 +70,8 @@ namespace RAAST_web.Controllers
         }
 
         // GET: Comment/Edit/5
+
+        [Authorize(Roles = "Admin, Editor")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,6 +92,7 @@ namespace RAAST_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Editor")]
         public ActionResult Edit([Bind(Include = "Id,blogpost_id,commenter,content,cu_date")] Comment comment)
         {
             if (ModelState.IsValid)
@@ -113,6 +123,7 @@ namespace RAAST_web.Controllers
         // POST: Comment/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Editor")]
         public ActionResult DeleteConfirmed(int id)
         {
             Comment comment = db.Comment.Find(id);

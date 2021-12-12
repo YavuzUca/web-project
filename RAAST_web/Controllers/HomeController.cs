@@ -37,6 +37,7 @@ namespace RAAST_web.Controllers
             return View(data.Boat_Info);
 
         }
+        [Route("Home/BlogPost")]
         public ActionResult BlogPost()
         {
             var blogposts = db.Blogpost.Include(b => b.AspNetUsers);
