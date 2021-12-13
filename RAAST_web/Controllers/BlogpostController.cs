@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using RAAST_web.Models;
+using Microsoft.AspNet.Identity;
 
 namespace RAAST_web.Controllers
 {
@@ -42,6 +43,9 @@ namespace RAAST_web.Controllers
         public ActionResult Create()
         {
             ViewBag.asp_user_id = new SelectList(db.AspNetUsers, "Id", "Email");
+            ViewBag.Time = DateTime.Now;
+            var user = User.Identity.GetUserId();
+            ViewBag.User = user;
             return View();
         }
 
