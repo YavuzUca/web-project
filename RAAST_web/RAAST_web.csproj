@@ -209,6 +209,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.test.css" />
+    <Content Include="css\style-blogs.css" />
     <Content Include="css\style.css" />
     <Content Include="css\homepage.css" />
     <Content Include="css\styletem.css" />
@@ -223,6 +224,7 @@
     <Content Include="images\ab4.jpg" />
     <Content Include="images\ab5.jpg" />
     <Content Include="images\ab6.jpg" />
+    <Content Include="images\back.jpg" />
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\banner21.jpg" />
@@ -303,7 +305,6 @@
     <Content Include="Views\Blogpost\Index.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
-
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
@@ -311,6 +312,8 @@
     <Content Include="Views\Home\BlogPost.cshtml" />
     <Content Include="Views\Home\BlogPostContent.cshtml" />
     <None Include="Views\defaultNavLayout.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Home\BlogPost_2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

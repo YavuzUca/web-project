@@ -1,24 +1,126 @@
 ﻿@model IEnumerable<RAAST_web.Models.Blogpost>
-
+@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/defaultNavLayout.cshtml";
+}
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <link rel="stylesheet" href="~/css/style-blogs.css">
+    @section head{
+        <style type="text/css">
+            body {
+                background-image: url('/images/back.png');
+                margin: 0;
+            }
+        </style>
+    }
 </head>
 <body>
-    <h1>BlogPost</h1>
-    <br>
-
-    @foreach (var item in Model)
-    {
-        <h3>@Html.ActionLink(item.title, "BlogPostContent", "Home", new { id = item.Id, title = item.title, content = item.content }, null)</h3>
-    }
-
+    <br />
+    <br />
+    <br />
+    <br />
     <div>
-
+        <div class="container py-lg-3">
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <div class="resp-tabs-container hor_1">
+                        <div class="products-content">
+                            <div class="row">
+                                <a href="https://www.ubuy.co.id/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjE4TkhMNXgrNUwuX0FDX1NMMTI1OV8uanBn.jpg" class="col-lg-4 bg-color-three mt-lg-0 mt-0">
+                                    <div class="blog-article-post d-flex flex-wrap align-content-between">
+                                        <div class="post-content">
+                                            <h6 class="sub-title">Mar 16, 2021</h6>
+                                            <img src="~/images/img10.png" alt=" " class="img-fluid">
+                                            <h4 class="blog_post_title my-2">Blog Post_1</h4>
+                                            <ul class="author-date mb-3 d-flex align-items-center">
+                                                <li>by <b>Patrick Sekimonyo</b></li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                                        </div>
+                                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                                    </div>
+                                </a>
+                                <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-5">
+                                    <div class="blog-article-post d-flex flex-wrap align-content-between">
+                                        <div class="post-content">
+                                            <h6 class="sub-title">Feb 24, 2020</h6>
+                                            <img src="~/images/img11.png" alt=" " class="img-fluid">
+                                            <h4 class="blog_post_title my-2">Blog Post_2</h4>
+                                            <ul class="author-date mb-3 d-flex align-items-center">
+                                                <li>by <b>Yavuz</b></li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                                        </div>
+                                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                                    </div>
+                                </a>
+                                <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-5">
+                                    <div class="blog-article-post d-flex flex-wrap align-content-between">
+                                        <div class="post-content">
+                                            <h6 class="sub-title">Mar 14, 2020</h6>
+                                            <img src="~/images/img12.png" alt=" " class="img-fluid">
+                                            <h4 class="blog_post_title my-2">Blog Post_3</h4>
+                                            <ul class="author-date mb-3 d-flex align-items-center">
+                                                <li>by <b>Yannick</b></li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                                        </div>
+                                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                                    </div>
+                                </a>
+                                <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-5">
+                                    <div class="blog-article-post d-flex flex-wrap align-content-between">
+                                        <div class="post-content">
+                                            <h6 class="sub-title">Mar 14, 2020</h6>
+                                            <img src="~/images/img13.png" alt=" " class="img-fluid">
+                                            <h4 class="blog_post_title my-2">Blog Post_4</h4>
+                                            <ul class="author-date mb-3 d-flex align-items-center">
+                                                <li>by <b>Devin</b></li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                                        </div>
+                                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                                    </div>
+                                </a>
+                                <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-5">
+                                    <div class="blog-article-post d-flex flex-wrap align-content-between">
+                                        <div class="post-content">
+                                            <h6 class="sub-title">Mar 14, 2020</h6>
+                                            <img src="~/images/img14.png" alt=" " class="img-fluid">
+                                            <h4 class="blog_post_title my-2">Blog Post_5</h4>
+                                            <ul class="author-date mb-3 d-flex align-items-center">
+                                                <li>by <b>Steven</b></li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                                        </div>
+                                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                                    </div>
+                                </a>
+                                <a href="#blog-single.html" class="col-lg-4 bg-color-three mt-lg-0 mt-5">
+                                    <div class="blog-article-post d-flex flex-wrap align-content-between">
+                                        <div class="post-content">
+                                            <h6 class="sub-title">Mar 14, 2020</h6>
+                                            <img src="~/images/img15.png" alt=" " class="img-fluid">
+                                            <h4 class="blog_post_title my-2">Blog Post_6</h4>
+                                            <ul class="author-date mb-3 d-flex align-items-center">
+                                                <li>by <b>Niemand</b></li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                                        </div>
+                                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
