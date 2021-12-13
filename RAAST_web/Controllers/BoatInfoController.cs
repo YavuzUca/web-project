@@ -21,14 +21,15 @@ namespace RAAST_web.Controllers
         private string url = "https://transceiver.hr.nl/api/rock7s";
 
         // GET: api/BoatInfo
-        public async Task<string> GetBoatInfo()
+        // Should return Rock7It array as JSON
+        // Werkt wel als je de Rock7 verandert naar string bij 26 en bij 32 ReadAsStringAsync, alleen wordt de return JSON raar en onoverzichtelijk.
+        public async Task<Rock7> GetBoatInfo()
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
             {
                 try
                 {
-                    var jsonlist = await response.Content.ReadAsStringAsync();
-                    return jsonlist;
+                    return await response.Content.ReadAsAsync<Rock7>();
                 }
                 catch
                 {
