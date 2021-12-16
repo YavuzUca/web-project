@@ -14,7 +14,7 @@ namespace RAAST_web
         {
             ConfigureAuth(app);
             createRolesandUsers();
-            ApiHelper.InitializeClient();            
+            ApiHelper.InitializeClient();
         }
 
         // In this method we will create default User roles and Admin user for login    

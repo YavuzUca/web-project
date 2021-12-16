@@ -14,7 +14,7 @@ namespace RAAST_web.App_Start
         public static void InitializeClient()
         {
             ApiClient = new HttpClient();
-            ApiClient.DefaultRequestHeaders.Accept.Clear();
+            //ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/ld+json"));
             ApiClient.DefaultRequestHeaders.Authorization = 
                 new AuthenticationHeaderValue(
