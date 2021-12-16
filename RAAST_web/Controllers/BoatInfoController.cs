@@ -14,6 +14,7 @@ using System.Web.Http.Results;
 using System.Web.Http.Description;
 using RAAST_web.Models;
 using RAAST_web.App_Start;
+using System.Text.Json;
 
 namespace RAAST_web.Controllers
 {
@@ -25,14 +26,17 @@ namespace RAAST_web.Controllers
         // GET: api/BoatInfo
         // Should return Rock7It array as JSON
         // Werkt wel als je de Rock7 verandert naar string bij 26 en bij 32 ReadAsStringAsync, alleen wordt de return JSON raar en onoverzichtelijk.
-        public async Task<Rock7> GetBoatInfo()
+        public async Task<string> GetBoatInfo()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             using (HttpResponseMessage response = await ApiHelper.ApiClient.SendAsync(request))
             {
                 try
                 {
-                    return await response.Content.ReadFromJsonAsync<Rock7>();
+                    //string result = await response.Content.ReadAsStringAsync();
+                    //var jsonString = JsonSerializer.Deserialize<Rock7>(result);
+                    //return jsonString;
+                    return await response.Content.ReadAsStringAsync();
                 }
                 catch
                 {
