@@ -17,7 +17,7 @@ namespace RAAST_web.Models
 
         public double? latitude { get; set; }
 
-        public float? temperature { get; set; }
+        public double? temperature { get; set; }
 
         public int? wind_Direction { get; set; }
 

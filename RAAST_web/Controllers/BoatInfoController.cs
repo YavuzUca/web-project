@@ -27,7 +27,7 @@ namespace RAAST_web.Controllers
 
         // GET: api/BoatInfo
         // Should return Rock7It array as JSON
-        public async void GetBoatInfo()
+        public async Task GetBoatInfo()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             using (HttpResponseMessage response = await ApiHelper.ApiClient.SendAsync(request))

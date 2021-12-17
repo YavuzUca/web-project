@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using RAAST_web.Models;
 using System.Data.Entity;
 using System.Net.Mail;
+using System.Threading.Tasks;
 
 namespace RAAST_web.Controllers
 {
@@ -24,17 +25,16 @@ namespace RAAST_web.Controllers
         public ActionResult Credits()
         {
             ViewBag.Message = "credits";
-
             return View();
         }
 
-        public ActionResult InfoBoot()
+        public async Task<ActionResult> InfoBoot()
         {
             ViewBag.Message = "This is the information about our boat.";
+            BoatInfoController data = new BoatInfoController();
+            await data.GetBoatInfo();
 
-            var data = new Data();
-
-            return View(data.Boat_Info);
+            return View(db.Boat_Info);
 
         }
         [Route("Home/BlogPost")]
