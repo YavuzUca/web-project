@@ -5,17 +5,19 @@ namespace RAAST_web.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Text.Json.Serialization;
     using Newtonsoft.Json;
 
     public partial class Boat_Info
     {
         public int Id { get; set; }
+        public string idName { get; set; }
 
         public double? longitude { get; set; }
 
         public double? latitude { get; set; }
 
-        public double? temperature { get; set; }
+        public float? temperature { get; set; }
 
         public int? wind_Direction { get; set; }
 
@@ -23,91 +25,88 @@ namespace RAAST_web.Models
 
         public int? boat_Speed { get; set; }
 
-        public DateTime? Date_Time { get; set; }
+        public string Date_Time { get; set; }
     }
 
     public class Rock7
     {
-        [JsonProperty("@context")]
-        public string context { get; set; }
+        [JsonPropertyName("@context")]
+        public string Context { get; set; }
 
-        [JsonProperty("@id")]
-        public string id { get; set; }
+        [JsonPropertyName("@id")]
+        public string Id { get; set; }
 
-        [JsonProperty("@type")]
-        public string type { get; set; }
+        [JsonPropertyName("@type")]
+        public string Type { get; set; }
 
-        [JsonProperty("@hydra:member")]
-        public Rock7It[] items { get; set; }
+        [JsonPropertyName("hydra:member")]
+        public List<Rock7It> Rock7Item { get; set; }
 
-        [JsonProperty("@hydra:membercount")]
-        public int count { get; set; }
+        [JsonPropertyName("hydra:totalItems")]
+        public int Rock7TotalItems { get; set; }
     }
 
     public class Rock7It
     {
-        [JsonProperty("@id")]
-        public string idString { get; set; }
+        [JsonPropertyName("@id")]
+        public string IdString { get; set; }
 
-        [JsonProperty("@type")]
-        public string type { get; set; }
+        [JsonPropertyName("@type")]
+        public string Type { get; set; }
 
-        [JsonProperty("id")]
-        public int id { get; set; }
+        [JsonPropertyName("id")]
+        public int Id { get; set; }
 
-        [JsonProperty("direction")]
-        public string direction { get; set; }
+        [JsonPropertyName("direction")]
+        public string Direction { get; set; }
 
-        [JsonProperty("dateReceived")]
-        public string dateReceived { get; set; }
+        [JsonPropertyName("dateReceived")]
+        public string DateReceived { get; set; }
 
-        [JsonProperty("dateSent")]
-        public string dateSent { get; set; }
+        [JsonPropertyName("dateSent")]
+        public string DateSent { get; set; }
 
-        [JsonProperty("sourceLatitude")]
-        public float sourceLatitude { get; set; }
+        [JsonPropertyName("sourceLatitude")]
+        public double SourcaLat { get; set; }
 
-        [JsonProperty("sourceLongitude")]
-        public float sourceLongitude { get; set; }
+        [JsonPropertyName("sourceLongitude")]
+        public double SourceLon { get; set; }
 
-        [JsonProperty("destinationLatitude")]
-        public float destinationLatitude { get; set; }
+        [JsonPropertyName("destinationLatitude")]
+        public double DestinationLat { get; set; }
 
-        [JsonProperty("destinationLongitude")]
-        public float destinationLongitude { get; set; }
+        [JsonPropertyName("destinationLongitude")]
+        public double DestinationLon { get; set; }
 
-        [JsonProperty("temp1")]
-        public float temp1 { get; set; }
+        [JsonPropertyName("temp1")]
+        public float Temp1 { get; set; }
 
-        [JsonProperty("temp2")]
-        public float temp2 { get; set; }
+        [JsonPropertyName("temp2")]
+        public float Temp2 { get; set; }
 
-        [JsonProperty("waterPolution")]
-        public float[] waterPolution { get; set; }
+        [JsonPropertyName("waterPolution")]
+        public string WaterPolution { get; set; }
 
-        [JsonProperty("heel")]
-        public float heel { get; set; }
+        [JsonPropertyName("heel")]
+        public int Heel { get; set; }
 
-        [JsonProperty("rudder")]
-        public float rudder { get; set; }
+        [JsonPropertyName("rudder")]
+        public int Rudder { get; set; }
 
-        [JsonProperty("sail")]
-        public float sail { get; set; }
+        [JsonPropertyName("sail")]
+        public int Sail { get; set; }
 
-        [JsonProperty("course")]
-        public float course { get; set; }
+        [JsonPropertyName("course")]
+        public int course { get; set; }
 
-        [JsonProperty("windDirection")]
-        public float windDirection { get; set; }
+        [JsonPropertyName("windDirection")]
+        public int WindDirection { get; set; }
 
-        [JsonProperty("speed")]
-        public float speed { get; set; }
+        [JsonPropertyName("speed")]
+        public int Speed { get; set; }
 
-        [JsonProperty("gyroscope")]
-        public float[] gyroscope { get; set; }
-
-        [JsonProperty("controlLevel")]
-        public float controlLevel { get; set; }
+        [JsonPropertyName("gyroscope")]
+        public string Gyroscope { get; set; }
     }
     public class WeatherForecastModel
     {

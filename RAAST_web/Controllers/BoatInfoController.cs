@@ -18,25 +18,41 @@ using System.Text.Json;
 
 namespace RAAST_web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BoatInfoController : ApiController
     {
         private string url = "https://transceiver.hr.nl/api/rock7s";
-        private string test_url = "https://www.metaweather.com/api/location/2471217";
+        private Data db = new Data();
+
 
         // GET: api/BoatInfo
         // Should return Rock7It array as JSON
-        // Werkt wel als je de Rock7 verandert naar string bij 26 en bij 32 ReadAsStringAsync, alleen wordt de return JSON raar en onoverzichtelijk.
-        public async Task<string> GetBoatInfo()
+        public async void GetBoatInfo()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             using (HttpResponseMessage response = await ApiHelper.ApiClient.SendAsync(request))
             {
                 try
                 {
-                    //string result = await response.Content.ReadAsStringAsync();
-                    //var jsonString = JsonSerializer.Deserialize<Rock7>(result);
-                    //return jsonString;
-                    return await response.Content.ReadAsStringAsync();
+                    Rock7 data = JsonSerializer.Deserialize<Rock7>(await response.Content.ReadAsStringAsync());
+                    foreach (Rock7It item in data.Rock7Item)
+                    {
+                        if (db.Boat_Info.Any(m => m.idName == item.IdString)) return;
+
+                        Boat_Info record = new Boat_Info
+                        {
+                            idName = item.IdString,
+                            longitude = item.SourceLon,
+                            latitude = item.SourcaLat,
+                            temperature = item.Temp1,
+                            wind_Direction = item.WindDirection,
+                            boat_Speed = item.Speed,
+                            Date_Time = item.DateReceived,
+                        };
+
+                        db.Boat_Info.Add(record);
+                    }
+                    db.SaveChanges();
                 }
                 catch
                 {
@@ -44,5 +60,7 @@ namespace RAAST_web.Controllers
                 }
             }
         }
+
+
     }
 }
