@@ -43,7 +43,7 @@ namespace RAAST_web.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "LastCall password")]
         public string OldPassword { get; set; }
 
         [Required]

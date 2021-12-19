@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
-using RAAST_web.Models;
-using System.Data.Entity;
 using System.Net.Mail;
+using System.Data.Entity;
 using System.Threading.Tasks;
+using RAAST_web.App_Start;
+using RAAST_web.Models;
 
 namespace RAAST_web.Controllers
 {
@@ -28,12 +30,23 @@ namespace RAAST_web.Controllers
             return View();
         }
 
+        // This is the method that makes use of the api/get
         public async Task<ActionResult> InfoBoot()
         {
             ViewBag.Message = "This is the information about our boat.";
-            BoatInfoController data = new BoatInfoController();
-            await data.GetBoatInfo();
+            ViewBag.Counter = $"This is for testing, the count of API calls: {ApiHelper.Count}";
 
+            // LastCall is the last time the API was used.
+            var nextHop = ApiHelper.LastCall;
+
+            // Will only call after certain amount of time has passed
+            if (DateTime.Now >= nextHop.AddSeconds(5) || nextHop == null)
+            {
+                BoatInfoController data = new BoatInfoController();
+                await data.GetBoatInfo();
+                ApiHelper.LastCall = DateTime.Now;
+                ApiHelper.Count += 1;
+            }
             return View(db.Boat_Info);
 
         }
