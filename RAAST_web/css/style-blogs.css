@@ -313,3 +313,8 @@ p {
   font-size: 14px;
   color: var(--font-color);
   margin-bottom: 10px; }
+
+.limit {
+    display: block;
+    text-overflow: ellipsis;
+}

@@ -25,33 +25,37 @@
     <br />
     <br />
     <br />
-    <div>
-        <div class="container py-lg-3">
-            <div class="row">
-                <div class="col-lg-12 mx-auto">
-                    <div class="resp-tabs-container hor_1">
-                        <div class="products-content">
-                            <div class="row">
-                                <a href="https://www.ubuy.co.id/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjE4TkhMNXgrNUwuX0FDX1NMMTI1OV8uanBn.jpg" class="col-lg-4 bg-color-three mt-lg-0 mt-0">
-                                    <div class="blog-article-post d-flex flex-wrap align-content-between">
-                                        <div class="post-content">
-                                            <h6 class="sub-title">Mar 16, 2021</h6>
-                                            <img src="~/images/img10.png" alt=" " class="img-fluid">
-                                            <h4 class="blog_post_title my-2">Blog Post_1</h4>
-                                            <ul class="author-date mb-3 d-flex align-items-center">
-                                                <li>by <b>Patrick Sekimonyo</b></li>
-                                            </ul>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+    @foreach (var blog in Model)
+    {
+        <div>
+            <div class="container py-lg-3">
+                <div class="row">
+                    <div class="col-lg-12 mx-auto">
+                        <div class="resp-tabs-container hor_1">
+                            <div class="products-content">
+                                <div class="row">
+                                    <a href="/Home/Blogpost/@blog.Id" class="col-lg-4 bg-color-three mt-lg-0 mt-0">
+                                        <div class="blog-article-post d-flex flex-wrap align-content-between">
+                                            <div class="post-content">
+                                                <h6 class="sub-title">@blog.cu_date</h6>
+                                                <img src="~/images/img10.png" alt=" " class="img-fluid">
+                                                <h4 class="blog_post_title my-2">@blog.title</h4>
+                                                <ul class="author-date mb-3 d-flex align-items-center">
+                                                    <li>by <b>@blog.AspNetUsers.UserName</b></li>
+                                                </ul>
+                                                <p class="limit">@blog.content</p>
+                                            </div>
+                                            <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
                                         </div>
-                                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
+
 </body>
 </html>
