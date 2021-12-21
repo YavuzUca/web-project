@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 
 namespace RAAST_web.App_Start
 {
-    public static class ApiHelper
+    public static class ApiHelperBoat
     {
         public static HttpClient ApiClient { get; set; }
         public static DateTime LastCall { get; set; }
@@ -17,7 +17,6 @@ namespace RAAST_web.App_Start
             LastCall = DateTime.Now;
 
             ApiClient = new HttpClient();
-            //ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/ld+json"));
             ApiClient.DefaultRequestHeaders.Authorization = 
                 new AuthenticationHeaderValue(
