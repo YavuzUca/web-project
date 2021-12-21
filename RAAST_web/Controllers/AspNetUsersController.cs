@@ -20,7 +20,13 @@ namespace RAAST_web.Controllers
         // GET: AspNetUsers
         public ActionResult Index()
         {
-            return View(db.AspNetUsers.ToList());
+            // Get specific role Editor from user in a list
+            var data = db.AspNetUsers
+                .Where(m => m.AspNetRoles
+                .Any(o => o.Name == "Editor"))
+                .ToList();
+
+            return View(data);
         }
 
         // GET: AspNetUsers/Details/5
