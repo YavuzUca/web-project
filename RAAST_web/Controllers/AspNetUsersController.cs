@@ -76,23 +76,6 @@ namespace RAAST_web.Controllers
             return View(aspNetUsers);
         }
 
-        /*
-        // POST: AspNetUsers/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Email,PhoneNumber,UserName")] AspNetUsers aspNetUsers)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(aspNetUsers).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(aspNetUsers);
-        }
-        */
         // GET: AspNetUsers/Delete/5
         public ActionResult Delete(string id)
         {
