@@ -108,13 +108,58 @@ namespace RAAST_web.Models
         [JsonPropertyName("gyroscope")]
         public string Gyroscope { get; set; }
     }
-    public class WeatherForecastModel
+
+    public class Weather
     {
-        public DayForecastModel[] consolidated_weather { get; set; }
-        public DateTime sun_rise { get; set; }
-        public DateTime sun_set { get; set; }
-        public string title { get; set; }
-        public string timezone { get; set; }
+        [JsonPropertyName("@context")]
+        public string Context { get; set; }
+
+        [JsonPropertyName("@id")]
+        public string Id { get; set; }
+
+        [JsonPropertyName("@type")]
+        public string Type { get; set; }
+
+        [JsonPropertyName("hydra:member")]
+        public List<WeatherIt> WeatherItem { get; set; }
+
+        [JsonPropertyName("hydra:totalItems")]
+        public int Rock7TotalItems { get; set; }
+    }
+    public class WeatherIt
+    {
+        [JsonPropertyName("@id")]
+        public string IdString { get; set; }
+
+        [JsonPropertyName("@type")]
+        public string type { get; set; }
+
+        [JsonPropertyName("id")]
+        public int id { get; set; }
+
+        [JsonPropertyName("time")]
+        public DateTime time { get; set; }
+
+        [JsonPropertyName("lat")]
+        public double lat { get; set; }
+
+        [JsonPropertyName("lon")]
+        public double lon { get; set; }
+
+        [JsonPropertyName("windSpeed")]
+        public List<WindInfo> windInfo { get; set; }
+    }
+
+    public class WindInfo
+    {
+        [JsonPropertyName("icon")]
+        public double icon { get; set; }
+
+        [JsonPropertyName("noaa")]
+        public double noaa { get; set; }
+
+        [JsonPropertyName("sg")]
+        public double sg { get; set; }
     }
 
     public class DayForecastModel

@@ -34,18 +34,18 @@ namespace RAAST_web.Controllers
         public async Task<ActionResult> InfoBoot()
         {
             ViewBag.Message = "This is the information about our boat.";
-            ViewBag.Counter = $"This is for testing, the count of API calls: {ApiHelper.Count}";
+            ViewBag.Counter = $"This is for testing, the count of API calls: {ApiHelperBoat.Count}";
 
             // LastCall is the last time the API was used.
-            var nextHop = ApiHelper.LastCall;
+            var nextHop = ApiHelperBoat.LastCall;
 
             // Will only call after certain amount of time has passed
             if (DateTime.Now >= nextHop.AddMinutes(5) || nextHop == null)
             {
                 BoatInfoController data = new BoatInfoController();
                 await data.GetBoatInfo();
-                ApiHelper.LastCall = DateTime.Now;
-                ApiHelper.Count += 1;
+                ApiHelperBoat.LastCall = DateTime.Now;
+                ApiHelperBoat.Count += 1;
             }
             return View(db.Boat_Info);
 

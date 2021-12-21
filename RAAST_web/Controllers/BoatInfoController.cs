@@ -30,7 +30,7 @@ namespace RAAST_web.Controllers
         public async Task GetBoatInfo()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.SendAsync(request))
+            using (HttpResponseMessage response = await ApiHelperBoat.ApiClient.SendAsync(request))
             {
                 try
                 {

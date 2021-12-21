@@ -16,7 +16,7 @@ namespace RAAST_web.Models
         [StringLength(50)]
         public string commenter { get; set; }
 
-        [StringLength(50)]
+        [StringLength(250)]
         public string content { get; set; }
 
         [StringLength(50)]
