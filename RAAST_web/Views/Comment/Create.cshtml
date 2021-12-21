@@ -27,7 +27,6 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.blogpost_id, "Blogpost Title", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.HiddenFor(model => model.blogpost_id, new {@Value = ViewBag.blog_id})
                 @Html.ValidationMessageFor(model => model.blogpost_id, "", new { @class = "text-danger" })
@@ -51,7 +50,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cu_date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.HiddenFor(model => model.cu_date, new { @Value = ViewBag.Time })
                 @Html.ValidationMessageFor(model => model.cu_date, "", new { @class = "text-danger" })
