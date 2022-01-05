@@ -50,10 +50,10 @@
 
         <div class="col-lg-offset-2 col-lg-5 moduleStyle">
             <div class="headerDiv">
-                <h3 class="centeredWhite ct">Windforce</h3>
+                <h3 class="centeredWhite ct">Windspeed</h3>
             </div>
 
-            <p class="centeredWhite">This is the current windforce </p>
+            <p class="centeredWhite">This is the current windspeed </p>
             <div class="centeredWhite">
 
                 @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count -1].wind_Speed) km/h
@@ -111,7 +111,7 @@
         {
             L.marker([model2[i].longitude, model2[i].latitude]).addTo(map)
                 .bindPopup('Speed = ' + model2[i].boat_Speed.toString() + 'km\h' +
-                '<br>Tempareture = ' + model2[i].temperature.toString() + '°C' +
+                '<br>Temperature = ' + model2[i].temperature.toString() + '°C' +
                 '<br>Windspeed = ' + model2[i].wind_Speed.toString() + 'km/n' +
                 '<br>Winddirection = ' + model2[i].wind_Direction.toString() + '°')
                 
