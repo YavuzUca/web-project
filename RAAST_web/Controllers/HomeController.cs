@@ -38,12 +38,13 @@ namespace RAAST_web.Controllers
 
             // LastCall is the last time the API was used.
             var nextHop = ApiHelperBoat.LastCall;
-
+            
             // Will only call after certain amount of time has passed
-            if (DateTime.Now >= nextHop.AddMinutes(5) || nextHop == null)
+            if (DateTime.Now >= nextHop.AddSeconds(5) || nextHop == null)
             {
                 BoatInfoController data = new BoatInfoController();
                 await data.GetBoatInfo();
+                await data.FillWindInfo();
                 ApiHelperBoat.LastCall = DateTime.Now;
                 ApiHelperBoat.Count += 1;
             }
