@@ -48,6 +48,7 @@ namespace RAAST_web.Controllers
                             latitude = item.SourcaLat,
                             temperature = item.Temp1,
                             wind_Direction = item.WindDirection,
+                            wind_Speed = 6,
                             boat_Speed = item.Speed,
                             Date_Time = item.DateReceived,
                         };
