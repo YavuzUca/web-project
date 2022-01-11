@@ -21,7 +21,8 @@ namespace RAAST_web.Controllers
     [Authorize(Roles = "Admin")]
     public class BoatInfoController : ApiController
     {
-        private string url = "https://transceiver.hr.nl/api/rock7s";
+        private string urlRock7 = "https://transceiver.hr.nl/api/rock7s";
+        private string urlWeather = "https://transceiver.hr.nl/api/weather";
         private Data db = new Data();
 
 
@@ -29,12 +30,13 @@ namespace RAAST_web.Controllers
         // Should return Rock7It array as JSON
         public async Task GetBoatInfo()
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, url);
+            var request = new HttpRequestMessage(HttpMethod.Get, urlRock7);
             using (HttpResponseMessage response = await ApiHelperBoat.ApiClient.SendAsync(request))
             {
                 try
                 {
                     Rock7 data = JsonSerializer.Deserialize<Rock7>(await response.Content.ReadAsStringAsync());
+                    
                     foreach (Rock7It item in data.Rock7Item)
                     {
                         if (db.Boat_Info.Any(m => m.idName == item.IdString)) return;
@@ -52,6 +54,7 @@ namespace RAAST_web.Controllers
 
                         db.Boat_Info.Add(record);
                     }
+                    
                     db.SaveChanges();
                 }
                 catch
@@ -61,6 +64,50 @@ namespace RAAST_web.Controllers
             }
         }
 
+        public async Task FillWindInfo()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, urlWeather);
+            using (HttpResponseMessage response = await ApiHelperWeather.ApiClient.SendAsync(request))
+            {
+                try
+                {
+                    Weather data = JsonSerializer.Deserialize<Weather>(await response.Content.ReadAsStringAsync());
+                    
+                    foreach (Boat_Info boat in db.Boat_Info)
+                    {
+                        
+                        // Optimises the code
+                        if (boat.latitude != null && boat.longitude != null) return;
 
+                        // var item comes from API
+                        foreach (WeatherIt item in data.WeatherItem)
+                        {
+                            
+                            if (boat.longitude == item.lon && boat.latitude == item.lat)
+                            {
+                                WindInfo speed = item.windInfo.First();
+                                boat.wind_Speed = (int?)speed.icon;
+                                break;
+                            }
+                            
+                            // Filling dummy data in, testing
+                            if (boat.longitude == 10 && boat.latitude == 10)
+                            {
+                                boat.wind_Speed = 100;
+                                break;
+                            }
+                        }
+                        
+                    }
+                    
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    //throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+        
     }
 }
