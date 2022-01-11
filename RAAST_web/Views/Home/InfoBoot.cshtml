@@ -19,6 +19,71 @@
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin="">
     </script>
+</head>
+<body>
+    <div class="container">
+        <h2>@ViewBag.Title</h2>
+        <h3>@ViewBag.Message</h3>
+        <h4>@ViewBag.Counter</h4>
+        <div id="map" style="height:400px;">
+
+        </div>
+    </div>
+    <div class="container">
+
+        <h2>Information about the modules</h2>
+
+        <div class="col-lg-5 moduleStyle">
+            <div class="headerDiv">
+                <h3 class="centeredWhite ct">Speed</h3>
+            </div>
+
+            <p class="centeredWhite">This is the current speed of the boat</p>
+            <div class="centeredWhite">
+
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed) km/h
+
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-offset-2 col-lg-5 moduleStyle">
+            <div class="headerDiv">
+                <h3 class="centeredWhite ct">Windspeed</h3>
+            </div>
+
+            <p class="centeredWhite">This is the current windspeed </p>
+            <div class="centeredWhite">
+
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Speed) km/h
+            </div>
+
+        </div>
+
+        <div class="col-lg-5 moduleStyle">
+            <div class="headerDiv">
+                <h3 class="centeredWhite ct">Temperature</h3>
+            </div>
+
+            <p class="centeredWhite">This is the current temperature</p>
+            <div class="centeredWhite">
+
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature) °C
+            </div>
+        </div>
+        <div class="col-lg-offset-2 col-lg-5 moduleStyle">
+            <div class="headerDiv">
+                <h3 class="centeredWhite ct">Winddirection</h3>
+            </div>
+
+            <p class="centeredWhite">This is the current direction of the wind</p>
+            <div class="centeredWhite">
+
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Direction)°
+            </div>
+        </div>
+    </div>
     <script>
 
         //sets up leaflet map
@@ -61,70 +126,5 @@
         firstpolyline.addTo(map);
 
     </script>
-</head>
-<body>
-    <div class="container">
-        <h2>@ViewBag.Title</h2>
-        <h3>@ViewBag.Message</h3>
-        <h4>@ViewBag.Counter</h4>
-        <div id="map" style="height:400px;">
-
-        </div>
-    </div>
-    <div class="container">
-
-        <h2>Information about the modules</h2>
-
-        <div class="col-lg-5 moduleStyle">
-            <div class="headerDiv">
-                <h3 class="centeredWhite ct">Speed</h3>
-            </div>
-
-            <p class="centeredWhite">This is the current speed of the boat</p>
-            <div class="centeredWhite">
-
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed) km/h
-                
-            </div>
-        </div>
-
-
-
-        <div class="col-lg-offset-2 col-lg-5 moduleStyle">
-            <div class="headerDiv">
-                <h3 class="centeredWhite ct">Windspeed</h3>
-            </div>
-
-            <p class="centeredWhite">This is the current windspeed </p>
-            <div class="centeredWhite">
-
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count -1].wind_Speed) km/h
-            </div>
-
-        </div>
-
-        <div class="col-lg-5 moduleStyle">
-            <div class="headerDiv">
-                <h3 class="centeredWhite ct">Temperature</h3>
-            </div>
-
-            <p class="centeredWhite">This is the current temperature</p>
-            <div class="centeredWhite">
-
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature) °C
-            </div>
-        </div>
-        <div class="col-lg-offset-2 col-lg-5 moduleStyle">
-            <div class="headerDiv">
-                <h3 class="centeredWhite ct">Winddirection</h3>
-            </div>
-
-            <p class="centeredWhite">This is the current direction of the wind</p>
-            <div class="centeredWhite">
-
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Direction)°
-            </div>
-        </div>
-    </div>
 </body>
 </html>
