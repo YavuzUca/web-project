@@ -19,6 +19,48 @@
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin="">
     </script>
+    <script>
+
+        //sets up leaflet map
+        var map = L.map('map').setView([51.91045640625668, 4.450265871598626], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([51.91045640625668, 4.450265871598626]).addTo(map)
+                .bindPopup('Home sweet home')
+                .openPopup();
+           //converts model to js model
+            var model2 = @Html.Raw(Json.Encode(Model));
+
+        //pointlist for coordinates
+        var pointlist = [];
+
+        //info per pointer
+        for (var i = 0; i < model2.length; i++)
+        {
+            L.marker([model2[i].longitude, model2[i].latitude]).addTo(map)
+                .bindPopup('Speed = ' + model2[i].boat_Speed.toString() + 'km\h' +
+                '<br>Temperature = ' + model2[i].temperature.toString() + '°C' +
+                '<br>Windspeed = ' + model2[i].wind_Speed.toString() + 'km/n' +
+                '<br>Winddirection = ' + model2[i].wind_Direction.toString() + '°')
+
+            //add point to map
+            pointlist.push([model2[i].longitude, model2[i].latitude]);
+
+        }
+
+        //draw line between points
+        var firstpolyline = new L.Polyline(pointlist, {
+            color: 'red',
+            weight: 3,
+            opacity: 0.5,
+            smoothFactor: 1
+        });
+        firstpolyline.addTo(map);
+
+    </script>
 </head>
 <body>
     <div class="container">
@@ -84,51 +126,5 @@
             </div>
         </div>
     </div>
-
-        
-
-    
-    <script>
-
-        //sets up leaflet map
-        var map = L.map('map').setView([51.91045640625668, 4.450265871598626], 13);
-
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-
-            L.marker([51.91045640625668, 4.450265871598626]).addTo(map)
-                .bindPopup('Home sweet home')
-                .openPopup();
-           //converts model to js model
-            var model2 = @Html.Raw(Json.Encode(Model));
-
-        //pointlist for coordinates
-        var pointlist = [];
-
-        //info per pointer
-        for (var i = 0; i < model2.length; i++)
-        {
-            L.marker([model2[i].longitude, model2[i].latitude]).addTo(map)
-                .bindPopup('Speed = ' + model2[i].boat_Speed.toString() + 'km\h' +
-                '<br>Temperature = ' + model2[i].temperature.toString() + '°C' +
-                '<br>Windspeed = ' + model2[i].wind_Speed.toString() + 'km/n' +
-                '<br>Winddirection = ' + model2[i].wind_Direction.toString() + '°')
-                
-            //add point to map
-            pointlist.push([model2[i].longitude, model2[i].latitude]);
-
-        }
-
-        //draw line between points
-        var firstpolyline = new L.Polyline(pointlist, {
-            color: 'red',
-            weight: 3,
-            opacity: 0.5,
-            smoothFactor: 1
-        });
-        firstpolyline.addTo(map);
-
-    </script>
 </body>
 </html>
