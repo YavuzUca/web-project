@@ -40,7 +40,7 @@ namespace RAAST_web.Controllers
             var nextHop = ApiHelperBoat.LastCall;
             
             // Will only call after certain amount of time has passed
-            if (DateTime.Now >= nextHop.AddSeconds(5) || nextHop == null)
+            if (DateTime.Now >= nextHop.AddMinutes(5) || nextHop == null)
             {
                 BoatInfoController data = new BoatInfoController();
                 await data.GetBoatInfo();
