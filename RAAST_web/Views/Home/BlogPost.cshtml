@@ -11,14 +11,14 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/css/style-blogs.css">
     <!--niet verwijderen, nog aan het testen-->
-    <!--section head{
+    @section head{
         <style type="text/css">
             body {
-                background-image: url('/images/back.png');
+                background-image: url('/images/back1.png');
                 margin: 0;
             }
         </style>
-    }-->
+    }
 </head>
 <body>
     <br />
@@ -43,7 +43,7 @@
                                                 <ul class="author-date mb-3 d-flex align-items-center">
                                                     <li>by <b>@blog.AspNetUsers.UserName</b></li>
                                                 </ul>
-                                                <p class="limit">@blog.content</p>
+                                                <!-- test <p class="limit"> at blog.content</p>-->
                                             </div>
                                             <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
                                         </div>
@@ -57,5 +57,5 @@
         </div>
     }
 
-</body>
+    </body>
 </html>
