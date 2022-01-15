@@ -20,6 +20,7 @@ namespace RAAST_web.Models
         [StringLength(50)]
         public string title { get; set; }
 
+        [StringLength(65535)]
         public string content { get; set; }
 
         [StringLength(50)]

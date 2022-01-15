@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
 using RAAST_web.Models;
+using RAAST_web.App_Start;
 
 [assembly: OwinStartupAttribute(typeof(RAAST_web.Startup))]
 namespace RAAST_web
@@ -13,6 +14,8 @@ namespace RAAST_web
         {
             ConfigureAuth(app);
             createRolesandUsers();
+            ApiHelperBoat.InitializeClient();
+            ApiHelperWeather.InitializeClient();
         }
 
         // In this method we will create default User roles and Admin user for login    

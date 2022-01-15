@@ -3,7 +3,18 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/editorNavLayout.cshtml";
+    if (Request.IsAuthenticated)
+    {
+        if (User.IsInRole("Admin"))
+        {
+            Layout = "~/Views/adminNavLayout.cshtml";
+        }
+        else
+        {
+            Layout = "~/Views/editorNavLayout.cshtml";
+        }
+
+    }
 }
 
 <h2>Create</h2>
@@ -16,11 +27,9 @@
         <h4>Blogpost</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
         <div class="form-group">
-            @Html.LabelFor(model => model.asp_user_id, "User", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("asp_user_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.HiddenFor(model => model.asp_user_id, new { @Value = ViewBag.User })
                 @Html.ValidationMessageFor(model => model.asp_user_id, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -42,18 +51,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cu_date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.cu_date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.HiddenFor(model => model.cu_date, new { @Value = ViewBag.Time })
                 @Html.ValidationMessageFor(model => model.cu_date, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.slug, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.slug, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.slug, "", new { @class = "text-danger" })
             </div>
         </div>
 

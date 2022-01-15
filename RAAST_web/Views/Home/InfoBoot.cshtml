@@ -24,6 +24,7 @@
     <div class="container">
         <h2>@ViewBag.Title</h2>
         <h3>@ViewBag.Message</h3>
+        <h4>@ViewBag.Counter</h4>
         <div id="map" style="height:400px;">
 
         </div>
@@ -41,7 +42,7 @@
             <div class="centeredWhite">
 
                 @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed) km/h
-                
+
             </div>
         </div>
 
@@ -49,13 +50,13 @@
 
         <div class="col-lg-offset-2 col-lg-5 moduleStyle">
             <div class="headerDiv">
-                <h3 class="centeredWhite ct">Windforce</h3>
+                <h3 class="centeredWhite ct">Windspeed</h3>
             </div>
 
-            <p class="centeredWhite">This is the current windforce </p>
+            <p class="centeredWhite">This is the current windspeed </p>
             <div class="centeredWhite">
 
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count -1].wind_Speed) km/h
+                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Speed) km/h
             </div>
 
         </div>
@@ -83,11 +84,10 @@
             </div>
         </div>
     </div>
-
-        
-
     <script>
-            var map = L.map('map').setView([51.91045640625668, 4.450265871598626], 13);
+
+        //sets up leaflet map
+        var map = L.map('map').setView([51.91045640625668, 4.450265871598626], 13);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -96,24 +96,27 @@
             L.marker([51.91045640625668, 4.450265871598626]).addTo(map)
                 .bindPopup('Home sweet home')
                 .openPopup();
-           
+           //converts model to js model
             var model2 = @Html.Raw(Json.Encode(Model));
 
+        //pointlist for coordinates
         var pointlist = [];
 
+        //info per pointer
         for (var i = 0; i < model2.length; i++)
         {
             L.marker([model2[i].longitude, model2[i].latitude]).addTo(map)
                 .bindPopup('Speed = ' + model2[i].boat_Speed.toString() + 'km\h' +
-                '<br>Tempareture = ' + model2[i].temperature.toString() + '°C' +
+                '<br>Temperature = ' + model2[i].temperature.toString() + '°C' +
                 '<br>Windspeed = ' + model2[i].wind_Speed.toString() + 'km/n' +
                 '<br>Winddirection = ' + model2[i].wind_Direction.toString() + '°')
-                
 
+            //add point to map
             pointlist.push([model2[i].longitude, model2[i].latitude]);
 
         }
 
+        //draw line between points
         var firstpolyline = new L.Polyline(pointlist, {
             color: 'red',
             weight: 3,

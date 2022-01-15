@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
-using RAAST_web.Models;
-using System.Data.Entity;
 using System.Net.Mail;
+using System.Data.Entity;
+using System.Threading.Tasks;
+using RAAST_web.App_Start;
+using RAAST_web.Models;
 
 namespace RAAST_web.Controllers
 {
@@ -24,17 +27,28 @@ namespace RAAST_web.Controllers
         public ActionResult Credits()
         {
             ViewBag.Message = "credits";
-
             return View();
         }
 
-        public ActionResult InfoBoot()
+        // This is the method that makes use of the api/get
+        public async Task<ActionResult> InfoBoot()
         {
             ViewBag.Message = "This is the information about our boat.";
+            ViewBag.Counter = $"This is for testing, the count of API calls: {ApiHelperBoat.Count}";
 
-            var data = new Data();
-
-            return View(data.Boat_Info);
+            // LastCall is the last time the API was used.
+            var nextHop = ApiHelperBoat.LastCall;
+            
+            // Will only call after certain amount of time has passed
+            if (DateTime.Now >= nextHop.AddMinutes(5) || nextHop == null)
+            {
+                BoatInfoController data = new BoatInfoController();
+                await data.GetBoatInfo();
+                await data.FillWindInfo();
+                ApiHelperBoat.LastCall = DateTime.Now;
+                ApiHelperBoat.Count += 1;
+            }
+            return View(db.Boat_Info);
 
         }
         [Route("Home/BlogPost")]
@@ -44,14 +58,13 @@ namespace RAAST_web.Controllers
             return View(blogposts.ToList());
         }
         [Route("Home/Blogpost/{id}")]
-        public ActionResult BlogPostContent(int id, string title, string content)
+        public ActionResult BlogPostContent(int id)
         {
-            ViewBag.idFromUrl = id;
-            ViewBag.Title = title;
-            ViewBag.Description = content;
+            ViewBag.id = id;
 
+            var mymodel = db.Blogpost.Find(id);
             //handle data
-            return View();
+            return View(mymodel);
         }
         
         // POST: Blogposts/Create
