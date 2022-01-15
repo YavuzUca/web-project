@@ -13,10 +13,11 @@
     @section head{
         <style type="text/css">
             body {
-                background-image: url('/images/back11.png');
+                background-image: url('/images/back6.png');
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+
         </style>
     }
 </head>
@@ -34,23 +35,24 @@
         <div class="row">
             @foreach (var blog in Model)
             {
-                <div class="col-lg-4 mt-lg-0 mt-4">
-                    <a href="/Home/Blogpost/@blog.Id" class="blog-article-post height-full bg-color-three d-flex flex-wrap align-content-between">
-                        <div class="post-content">
-                            <h6 class="sub-title">@blog.cu_date</h6>
-                            <h4 class="blog_post_title">
-                                @blog.title
-                            </h4>
-                            <ul class="author-date my-4 d-flex align-items-center">
-                                <li>by <b>@blog.AspNetUsers.UserName</b></li>
-                            </ul>
-                            <p>
-                                Click on the article to read more about this story
-                            </p>
-                        </div>
-                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
-                    </a>
-                </div>
+                
+                    <div class="col-lg-4 mt-lg-0 mt-4">
+                        <a href="/Home/Blogpost/@blog.Id" class="blog-article-post height-full bg-color-three d-flex flex-wrap align-content-between">
+                            <div class="post-content">
+                                <h6 class="sub-title">@blog.cu_date</h6>
+                                <h4 class="blog_post_title">
+                                    @blog.title
+                                </h4>
+                                <ul class="author-date my-4 d-flex align-items-center">
+                                    <li>by <b>@blog.AspNetUsers.UserName</b></li>
+                                </ul>
+                                <p>
+                                    Click on the article to read more about this story
+                                </p>
+                            </div>
+                            <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                        </a>
+                    </div>
             }
         </div>
 
