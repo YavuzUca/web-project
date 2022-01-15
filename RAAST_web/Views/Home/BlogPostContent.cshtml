@@ -14,20 +14,19 @@
 
     <h2>Comments</h2>
     @foreach (var item in Model.Comment)
-            {
-<p>
-    ----------------------------------
-    <br />
-    Name: @item.commenter
-    <br />
-    Content: @item.content
-    <br />
-    date: @item.cu_date
-    <br />
+    {
+        <p>
+            ----------------------------------
+            <br />
+            Name: @item.commenter
+            <br />
+            Content: @item.content
+            <br />
+            date: @item.cu_date
+            <br />
 
-</p>
-            }
-<h3>@Html.ActionLink("Add Comment", "Create", "Comment", new {blogpostid = Model.Id}, null)</h3>
-     
+        </p>
+    }
+    <h3>@Html.ActionLink("Add Comment", "Create", "Comment", new { blogpostid = Model.Id }, null)</h3>
 </body>
 </html>

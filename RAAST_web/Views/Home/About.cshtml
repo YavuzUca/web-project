@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "About";
+    Layout = "~/Views/defaultNavLayout.cshtml";
 
 
 }
@@ -8,47 +9,104 @@
 
 <html>
 <head>
-    <link href="~/css/style.css" rel="stylesheet" />
     <title>About page</title>
+    @section head{
+        <style type="text/css">
+            body {
+                background-image: url('/images/back3.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    }
 </head>
 <body>
-    <div class="carousel" data-ride="carousel">
+    <!-- About beide vakken -->
+    <br />
+    <br />
+    <br />
+    <br />
+    <section class="w3l-content-6">
+        <div class="content-6-mian py-5">
+            <div class="container py-lg-5">
+                <div class="content-info-in row">
+                    <div class="col-lg-6">
+                        <img src="~/images/Heijplaat.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self  pl-lg-4">
+                        <div class="title-content text-left mb-2">
+                            <h6 class="sub-title">About Us</h6>
+                            <h3 class="hny-title">
+                                Project RAAST and the trip of a lifetime!
+                            </h3>
+                        </div>
+                        <p class="mt-3">
+                            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
+                            ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur
+                            adipisicing
+                            elit.fugiat consequatur voluptatem nihil ad.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 mt-5 about-right-faq align-self order2">
+                        <div class="title-content text-left mb-2">
+                            <h6 class="sub-title">Who We Are</h6>
+                            <h3 class="hny-title">Quality and perfomance</h3>
+                        </div>
+                        <p class="mt-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus interdum odio et ultricies.
+                            Nulla non volutpat nibh. Aenean sed nulla dictum, auctor lacus ac, interdum mi. Fusce eget fringilla sem,
+                            eu gravida diam. Sed augue nibh, lobortis vel tristique vel, consectetur at lacus. Quisque faucibus ligula
+                            ultricies ante laoreet congue. Donec ut mauris in mauris tempus vestibulum. Nullam eu tellus vitae mauris
+                            finibus convallis. Quisque condimentum sodales pharetra. Nam lobortis elit ullamcorper, commodo purus quis,
+                            sodales odio. Duis tempus metus non turpis elementum congue. Donec viverra quam augue, et molestie dolor
+                            elementum eget.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 mt-5 pl-lg-4">
+                        <img src="~/images/banner_blank_1.jpg" alt="" class="img-fluid">
+                    </div>
 
-        <div class="carousel-inner aboutCarousel">
-            <div class="carousel-item active">
-                <img src="~/images/Heijplaat.jpg" alt="Picture of Heijplaat">
-                <div class="carousel-caption d-none">
-                    <h1>About us</h1>
+
                 </div>
             </div>
-        </div>
-    </div>
+    </section>
 
-    <div class="container">
-        <h2>Lorem Ipsum</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus interdum odio et ultricies.
-            Nulla non volutpat nibh. Aenean sed nulla dictum, auctor lacus ac, interdum mi. Fusce eget fringilla sem,
-            eu gravida diam. Sed augue nibh, lobortis vel tristique vel, consectetur at lacus. Quisque faucibus ligula
-            ultricies ante laoreet congue. Donec ut mauris in mauris tempus vestibulum. Nullam eu tellus vitae mauris
-            finibus convallis. Quisque condimentum sodales pharetra. Nam lobortis elit ullamcorper, commodo purus quis,
-            sodales odio. Duis tempus metus non turpis elementum congue. Donec viverra quam augue, et molestie dolor
-            elementum eget.
+    <!-- JavaScript -->
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
 
-        </p>
-    </div>
-    <div class="container">
-        <h2>Lorem Ipsum</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus interdum odio et ultricies.
-            Nulla non volutpat nibh. Aenean sed nulla dictum, auctor lacus ac, interdum mi. Fusce eget fringilla sem,
-            eu gravida diam. Sed augue nibh, lobortis vel tristique vel, consectetur at lacus. Quisque faucibus ligula
-            ultricies ante laoreet congue. Donec ut mauris in mauris tempus vestibulum. Nullam eu tellus vitae mauris
-            finibus convallis. Quisque condimentum sodales pharetra. Nam lobortis elit ullamcorper, commodo purus quis,
-            sodales odio. Duis tempus metus non turpis elementum congue. Donec viverra quam augue, et molestie dolor
-            elementum eget.
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
 
-        </p>
-    </div>
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="~/js/bootstrap.min.js"></script>
+
 </body>
 </html>

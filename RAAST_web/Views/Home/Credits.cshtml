@@ -1,11 +1,20 @@
 @{
     ViewBag.Title = "Credits";
+    Layout = "~/Views/defaultNavLayout.cshtml";
 }
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="~/css/style.css" rel="stylesheet" />
-    <title>Credit page</title>
+    <title>Credits</title>
+    @section head{
+        <style type="text/css">
+            body {
+                background-image: url('/images/back2.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    }
 </head>
 
 <body>
@@ -49,8 +58,152 @@
                 <tr><td>Yavuz Uca</td></tr>
                 <tr><td><br></td></tr>
             </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- Eerste vak -->
+    <section class="t2t-content-4">
+        <div class="content-4-main py-5">
+            <div class="container py-lg-4">
+                <div class="content-info-in row">
 
+                    <div class="content-right col-lg-6">
+                        <img src="~/images/img11.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="content-left col-lg-6 pl-lg-5">
+                        <h6 class="sub-title">
+                            Credits
+                        </h6>
+                        <h3 class="hny-title">
+                            This website was made by a talented group of students!
+                        </h3>
+                        <p class="mt-3">
+                            Lorem illum facere aperiam sequi optio consectetur adipisicing elitFuga,
+                            suscipit totam animi consequatur saepe blanditiis.Lorem ipsum dolor sit amet Phasellus
+                            lacinia id erat eu
+                            ullamcorper. Nunc id ipsum fringilla, gravida felis vitae.
+                        </p>
+
+                        <div class="content-4-bottom">
+                            <div class="content4-right-grids mb-md-0 mb-4">
+
+                                <div class="content4-right-info">
+                                    <h6><a href="~/Home/About">Our Story</a></h6>
+                                    <p>Lorem ipsum dolor sit amet,facere aperiam.</p>
+                                </div>
+
+                            </div>
+                            <div class="content4-right-grids mb-md-0 mb-4">
+
+                                <div class="content4-right-info">
+                                    <h6><a href="~/Home/About">Our Mission</a></h6>
+                                    <p>Lorem ipsum dolor sit amet,facere aperiam.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+
+    <!-- Developer vak -->
+    <section class="t2t-team-main py-5" id="team">
+        <div class="container py-lg-4">
+            <div class="title-content text-center mb-lg-5 mb-4">
+                <h6 class="sub-title">Our Developers</h6>
+                <h3 class="hny-title">Meet The Team</h3>
+            </div>
+            <div class="row inner-sec-t2tayouts-w3pvt-lauinfo">
+                <div class="col-md-3 col-6">
+                    <div class="team-grids text-center">
+                        <img src="~/images/img14.png" class="img-fluid" alt="">
+                        <div class="team-info">
+                            <div class="caption">
+                                <h4>Patrick Sekimonyo</h4>
+                                <h6>Software engineer</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="team-grids text-center">
+                        <img src="~/images/img15.png" class="img-fluid" alt="">
+                        <div class="team-info">
+                            <div class="caption">
+                                <h4>Yavuz Uca</h4>
+                                <h6>Software engineer</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mt-md-0 mt-4">
+                    <div class="team-grids text-center">
+                        <img src="~/images/img12.png" class="img-fluid" alt="">
+                        <div class="team-info">
+                            <div class="caption">
+                                <h4>Yannick de Vreede</h4>
+                                <h6>Software engineer</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mt-md-0 mt-4">
+                    <div class="team-grids text-center">
+                        <img src="~/images/img13.png" class="img-fluid" alt="">
+                        <div class="team-info">
+                            <div class="caption">
+                                <h4>Devin Chen</h4>
+                                <h6>Software engineer</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JavaScript -->
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <script src="~/js/bootstrap.min.js"></script>
+
+
+
+
+
 </body>
 </html>
