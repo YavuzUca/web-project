@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/css/styletem.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
     <a href="~/fonts/fontawesome-webfont.eot"></a>
     <a href="~/fonts/fontawesome-webfont.ttf"></a>
     <a href="~/fonts/fontawesome-webfont.woff"></a>
@@ -17,43 +18,45 @@
 </head>
 <body>
     <!--header-->
-    <header id="site-header" class="fixed-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg ">
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa icon-expand fa-bars"></span>
-                    <span class="fa icon-close fa-times"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="navbar item">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
-                        <li class="navbar item">@Html.ActionLink("Blog", "BlogPost", "Home", new { @class = "nav-link" })</li>
-                        <li class="navbar item">@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
-                        <li class="navbar item">@Html.ActionLink("Info", "InfoBoot", "Home", new { @class = "nav-link" })</li>
-                        <li class="navbar item">@Html.ActionLink("Credits", "Credits", "Home", new { @class = "nav-link" })</li>
-                    </ul>
+    <div id="wrapper">
+        <header id="site-header" class="fixed-top">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg ">
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fa icon-expand fa-bars"></span>
+                        <span class="fa icon-close fa-times"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="navbar item">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("Blog", "BlogPost", "Home", new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("Info", "InfoBoot", "Home", new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("Credits", "Credits", "Home", new { @class = "nav-link" })</li>
+                        </ul>
 
-                    <ul class="navbar-nav search-right mt-lg-1 mt-2">
+                        <ul class="navbar-nav search-right mt-lg-1 mt-2">
 
-                        <li class="nav-item">
-                            @Html.Partial("_LoginPartial")
+                            <li class="nav-item">
+                                @Html.Partial("_LoginPartial")
 
-                    </ul>
-                </div>
-            </nav>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!--VOET-->
+        <div>
+            @RenderBody()
         </div>
-    </header>
-    
-    <!--VOET-->
-    <div>
-        @RenderBody()
-    </div>
-    <div class="container body-content">
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - RAAST Hogeschool Rotterdam</p>
-        </footer>
+        <div class="container body-content">
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - RAAST Hogeschool Rotterdam</p>
+            </footer>
+        </div>
     </div>
 </body>
 </html>
