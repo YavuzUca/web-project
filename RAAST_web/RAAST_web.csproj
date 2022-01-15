@@ -213,6 +213,7 @@
     <Content Include="css\style-blogs.css" />
     <Content Include="css\style.css" />
     <Content Include="css\homepage.css" />
+    <Content Include="css\style2.css" />
     <Content Include="css\styletem.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
