@@ -23,7 +23,7 @@
     }
 </head>
 <body>
-    <!-- About beide vakken -->
+    <!-- Full Blogpost with comments -->
     <br />
     <br />
     <br />
@@ -44,30 +44,32 @@
                         </div>
                         <p class="mt-3">
                             <span style="color:black;">@Model.content</span>
-                        </p>
+                            <br />
+                            <p class="mt-3">@Html.ActionLink(">>Click here, and place your own comment!", "Create", "Comment", new { blogpostid = Model.Id }, null)</p>
+                            <br />
                     </div>
                     @foreach (var item in Model.Comment)
                     {
                         <div class="col-lg-6 mt-5 about-right-faq align-self order2">
                             <div class="title-content text-left mb-2">
-                                <h3 class="hny-title">@item.commenter</h3>
+                                <h6 class="sub-title">@item.commenter commented:</h6>
                             </div>
                             <p class="mt-3">
                                 <span style="color:black;">@item.content</span>
                             </p>
-                            <p>date: @item.cu_date</p>
-                            <br />
-                            <p class="mt-3">@Html.ActionLink(">>Add your own comment!", "Create", "Comment", new { blogpostid = Model.Id }, null)</p>
-                        <br />
+                            <p>Posted on: @item.cu_date</p>
                         </div>
+
+
                     }
-                    
+
 
                 </div>
             </div>
+        </div>
     </section>
 
-    <!-- JavaScript -->
+    <!-- JavaScript rules for navigation settings -->
     <script src="~/js/jquery-3.3.1.min.js"></script>
     <script>
         $(function () {

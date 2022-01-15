@@ -4,7 +4,7 @@
     Layout = "~/Views/defaultNavLayout.cshtml";
 }
 
-<!-- Grote slider -->
+<!-- Big slider section -->
 <section class="t2t-main-slider position-relative" id="home">
     <div class="companies20-content">
         <div class="owl-one owl-carousel owl-theme">
@@ -39,12 +39,11 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
 
-<!-- Sponsoren regel -->
+<!-- Sponsor section -->
 <section class="features-4">
     <div class="features4-block py-5">
         <div class="container py-lg-4">
@@ -53,7 +52,7 @@
                 <p class="fea-para">We thank them all for this amazing opportunity</p>
             </div>
             <div class="row features4-grids text-left mt-lg-4">
-                <!-- 
+                <!--
                 <div class="col-lg-3 col-md-6 features4-grid mt-4">
                     <div class="features4-grid-inn">
                         <div class="img-featured">
@@ -190,9 +189,8 @@
     </div>
 </div>
 
-<!-- JavaScript regels-->
+<!-- JavaScript rules for slider and navigation settings -->
 <script src="~/js/owl.carousel.js"></script>
-<!-- script voor grote slider-->
 <script>
     $(document).ready(function () {
         $('.owl-one').owlCarousel({
@@ -251,10 +249,10 @@
     });
 </script>
 @if (ViewBag.Message != null)
-            {
-                <script type="text/javascript">
+{
+    <script type="text/javascript">
                     window.onload = function () {
                         alert("@ViewBag.Message");
                     }
-                </script>
-            }
+    </script>
+}
