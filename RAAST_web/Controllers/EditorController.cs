@@ -11,6 +11,7 @@ namespace RAAST_web.Controllers
     [Authorize(Roles = "Admin, Editor")]
     public class EditorController : Controller
     {
+
         public ActionResult AddPost()
         {
             return View();
@@ -43,6 +44,7 @@ namespace RAAST_web.Controllers
                 smtp.Credentials = new System.Net.NetworkCredential("newsletter.hr.raast@gmail.com", "cd9#M6Y3tnaS$p$R$tSP"); // Enter seders User name and password  
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
+                ViewBag.Message = "Email is sent!";
                 return View("AddPost", _objModelMail);
             }
             else
