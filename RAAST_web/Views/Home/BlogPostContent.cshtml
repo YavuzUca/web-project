@@ -1,32 +1,108 @@
 ﻿@model RAAST_web.Models.Blogpost
+@{
+    ViewBag.Title = "Comments";
+    Layout = "~/Views/defaultNavLayout.cshtml";
+
+
+}
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <title>Comments</title>
+    @section head{
+        <style type="text/css">
+            body {
+                background-image: url('/images/back6.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    }
 </head>
 <body>
-    <h1>@Model.title</h1>
-    <p>@Model.content</p>
+    <!-- About beide vakken -->
     <br />
+    <br />
+    <br />
+    <br />
+    <section class="w3l-content-6">
+        <div class="content-6-mian py-5">
+            <div class="container py-lg-5">
+                <div class="content-info-in row">
+                    <div class="col-lg-6">
+                        <img src="~/images/Heijplaat.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self  pl-lg-4">
+                        <div class="title-content text-left mb-2">
+                            <h6 class="sub-title">written by: @Model.AspNetUsers.UserName</h6>
+                            <h3 class="hny-title">
+                                @Model.title
+                            </h3>
+                        </div>
+                        <p class="mt-3">
+                            <span style="color:black;">@Model.content</span>
+                        </p>
+                    </div>
+                    @foreach (var item in Model.Comment)
+                    {
+                        <div class="col-lg-6 mt-5 about-right-faq align-self order2">
+                            <div class="title-content text-left mb-2">
+                                <h3 class="hny-title">@item.commenter</h3>
+                            </div>
+                            <p class="mt-3">
+                                <span style="color:black;">@item.content</span>
+                            </p>
+                            <p>date: @item.cu_date</p>
+                            <br />
+                            <p class="mt-3">@Html.ActionLink(">>Add your own comment!", "Create", "Comment", new { blogpostid = Model.Id }, null)</p>
+                        <br />
+                        </div>
+                    }
+                    
 
-    <h2>Comments</h2>
-    @foreach (var item in Model.Comment)
-    {
-        <p>
-            ----------------------------------
-            <br />
-            Name: @item.commenter
-            <br />
-            Content: @item.content
-            <br />
-            date: @item.cu_date
-            <br />
+                </div>
+            </div>
+    </section>
 
-        </p>
-    }
-    <h3>@Html.ActionLink("Add Comment", "Create", "Comment", new { blogpostid = Model.Id }, null)</h3>
+    <!-- JavaScript -->
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="~/js/bootstrap.min.js"></script>
+
 </body>
 </html>

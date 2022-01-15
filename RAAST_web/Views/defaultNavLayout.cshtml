@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/css/style2.css" rel="stylesheet" />
-    <link href="~/css/footer.css" rel="stylesheet" />
     <a href="~/fonts/fontawesome-webfont.eot"></a>
     <a href="~/fonts/fontawesome-webfont.ttf"></a>
     <a href="~/fonts/fontawesome-webfont.woff"></a>
@@ -18,7 +17,6 @@
 </head>
 <body>
     <!--header-->
-    <div id="wrapper">
         <header id="site-header" class="fixed-top">
             <div class="container">
                 <nav class="navbar navbar-expand-lg ">
@@ -39,9 +37,9 @@
                         <ul class="navbar-nav search-right mt-lg-1 mt-2">
 
                             <li class="nav-item">
-                                @Html.Partial("_LoginPartial")
+                                <span style="color:white;">@Html.Partial("_LoginPartial")</span>
 
-                        </ul>
+</ul>
                     </div>
                 </nav>
             </div>
@@ -57,6 +55,5 @@
                 <p>&copy; @DateTime.Now.Year - RAAST Hogeschool Rotterdam</p>
             </footer>
         </div>
-    </div>
 </body>
 </html>
