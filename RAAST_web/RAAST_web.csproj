@@ -314,7 +314,6 @@
     <Content Include="Views\Home\BlogPostContent.cshtml" />
     <None Include="Views\defaultNavLayout.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
-    <Content Include="Views\Home\BlogPost_2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
