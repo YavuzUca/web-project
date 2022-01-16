@@ -33,7 +33,7 @@
     <br />
     <br />
     <div class="container">
-        <div id="map" style="height:400px;" allowfullscreen="">
+        <div id="map" style="height:400px;">
 
         </div>
     </div>
@@ -43,10 +43,10 @@
                 <div class="title-content text-center mb-5">
                     <h6 class="sub-title">Lorem illum facere</h6>
                     <h3 class="hny-title">Boat information</h3>
-                    <p class="fea-para">Lorem illum facere aperiam consectetur adipisicing elit</p>
+                    <p class="fea-para"><span style="color:black;">Lorem illum facere aperiam consectetur adipisicing elit</span></p>
                 </div>
                 <div class="row t-in">
-                    <div class="col-lg-4 col-md-6 blokq-main-info">
+                    <div class="col-lg-4 col-md-6 blokq-main-info ez-love">
                         <div class="blokq-inner card box-shadow">
 
                             <div class="card-body">
@@ -56,15 +56,16 @@
 
                                 </h5>
                                 <ul class="list-unstyled mt-3 mb-4">
-                                    <li> This is the current speed of the boat.</li>
-                                    <li> An updated view is shown atleast every half hour.</li>
+                                    
+                                    <li><span style="color:black;"> This is the current speed of the boat.</span></li>
+                                    <li><span style="color:black;"> An updated view is shown atleast every half hour.</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <!-- ez-love-->
 
-
-                    <div class="col-lg-4 col-md-6 blokq-main-info mt-lg-0 mt-4">
+                    <div class="col-lg-4 col-md-6 blokq-main-info mt-lg-0 mt-4 ez-love">
                         <div class="blokq-inner card box-shadow">
 
                             <div class="card-body">
@@ -73,13 +74,13 @@
                                     @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature)<span class="align-top">°C</span>
                                 </h5>
                                 <ul class="list-unstyled mt-3 mb-4">
-                                    <li> This is the current temperature surrounding the boat.</li>
-                                    <li> An updated view is shown atleast every half hour.</li>
+                                    <li><span style="color:black;"> This is the current temperature surrounding the boat.</span></li>
+                                    <li><span style="color:black;"> An updated view is shown atleast every half hour.</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 blokq-main-info mt-lg-0 mt-4">
+                    <div class="col-lg-4 col-md-6 blokq-main-info mt-lg-0 mt-4 ez-love">
                         <div class="blokq-inner card box-shadow">
 
                             <div class="card-body">
@@ -88,14 +89,15 @@
                                     @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Speed)<span class="align-top">km/h</span>
                                 </h5>
                                 <ul class="list-unstyled mt-3 mb-4">
-                                    <li> This is the current wind speed facing the boat.</li>
-                                    <li> An updated view is shown atleast every half hour.</li>
+                                    <li><span style="color:black;"> This is the current wind speed facing the boat.</span></li>
+                                    <li><span style="color:black;"> An updated view is shown atleast every half hour.</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 blokq-main-info mt-lg-0 mt-4">
+                    <div class="col-lg-4 ">
+                    </div>
+                    <div class="col-lg-4 col-md-6 blokq-main-info mt-lg-0 mt-4 ez-love">
                         <div class="blokq-inner card box-shadow">
                             <div class="card-body">
                                 <h4 class="text-uppercase text-center mb-3">Wind Direction</h4>
@@ -103,12 +105,13 @@
                                     @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Direction)<span class="align-top">°</span>
                                 </h5>
                                 <ul class="list-unstyled mt-3 mb-4">
-                                    <li> This is the current wind direction facing the boat.</li>
-                                    <li> An updated view is shown atleast every half hour.</li>
+                                    <li><span style="color:black;"> This is the current wind direction facing the boat.</span></li>
+                                    <li><span style="color:black;"> An updated view is shown atleast every half hour.</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
