@@ -104,14 +104,14 @@
         //info per pointer
         for (var i = 0; i < model2.length; i++)
         {
-            L.marker([model2[i].longitude, model2[i].latitude]).addTo(map)
+            L.marker([model2[i].latitude, model2[i].longitude]).addTo(map)
                 .bindPopup('Speed = ' + model2[i].boat_Speed.toString() + 'km\h' +
                 '<br>Temperature = ' + model2[i].temperature.toString() + '°C' +
                 '<br>Windspeed = ' + model2[i].wind_Speed.toString() + 'km/n' +
                 '<br>Winddirection = ' + model2[i].wind_Direction.toString() + '°')
 
             //add point to map
-            pointlist.push([model2[i].longitude, model2[i].latitude]);
+            pointlist.push([model2[i].latitude, model2[i].longitude]);
 
         }
 
