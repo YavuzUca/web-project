@@ -3,15 +3,12 @@
 
 @{
     ViewBag.Title = "Boat information";
+    Layout = "~/Views/defaultNavLayout.cshtml";
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Informatie about the boat.</title>
-    <link href="~/css/style.css" rel="stylesheet" />
+    <title>Boat information</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossorigin="" />
@@ -19,70 +16,139 @@
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin="">
     </script>
+    @section head{
+        <style type="text/css">
+            body {
+                background-image: url('/images/back9.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    }
 </head>
 <body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <div class="container">
-        <h2>@ViewBag.Title</h2>
-        <h3>@ViewBag.Message</h3>
         <div id="map" style="height:400px;">
 
         </div>
     </div>
-    <div class="container">
+    <section class="t2t-blokken">
+        <div class="py-5" id="blokqx">
+            <div class="container py-lg-5">
+                <div class="title-content text-center mb-5">
+                    <h3 class="hny-title">Boat information</h3>
+                    <p class="fea-para"><span style="color:black;">Lorem illum facere aperiam consectetur adipisicing elit</span></p>
+                </div>
+                <div class="row t-in">
+                    <div class="col-lg-4 col-md-6 blokq-main-info ez-love">
+                        <div class="blokq-inner card box-shadow">
 
-        <h2>Information about the modules</h2>
+                            <div class="card-body">
+                                <h4 class="text-uppercase text-center mb-3">Speed</h4>
+                                <h5 class="card-title blokqx-card-title">
+                                    @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed)<span class="align-top">km/h</span>
 
-        <div class="col-lg-5 moduleStyle">
-            <div class="headerDiv">
-                <h3 class="centeredWhite ct">Speed</h3>
-            </div>
+                                </h5>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    
+                                    <li><span style="color:black;"> This is the current speed of the boat.</span></li>
+                                    <li><span style="color:black;"> An updated view is shown atleast every half hour.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ez-love-->
 
-            <p class="centeredWhite">This is the current speed of the boat</p>
-            <div class="centeredWhite">
+                    <div class="col-lg-4 col-md-6 blokq-main-info mt-lg-0 mt-4 ez-love">
+                        <div class="blokq-inner card box-shadow">
 
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed) km/h
+                            <div class="card-body">
+                                <h4 class="text-uppercase text-center mb-3">Temperature</h4>
+                                <h5 class="card-title blokqx-card-title">
+                                    @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature)<span class="align-top">°C</span>
+                                </h5>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li><span style="color:black;"> This is the current temperature surrounding the boat.</span></li>
+                                    <li><span style="color:black;"> An updated view is shown atleast every half hour.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 blokq-main-info mt-lg-0 mt-4 ez-love">
+                        <div class="blokq-inner card box-shadow">
 
+                            <div class="card-body">
+                                <h4 class="text-uppercase text-center mb-3">Wind Speed</h4>
+                                <h5 class="card-title blokqx-card-title">
+                                    @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Speed)<span class="align-top">km/h</span>
+                                </h5>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li><span style="color:black;"> This is the current wind speed facing the boat.</span></li>
+                                    <li><span style="color:black;"> An updated view is shown atleast every half hour.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 ">
+                    </div>
+                    <div class="col-lg-4 col-md-6 blokq-main-info mt-lg-0 mt-4 ez-love">
+                        <div class="blokq-inner card box-shadow">
+                            <div class="card-body">
+                                <h4 class="text-uppercase text-center mb-3">Wind Direction</h4>
+                                <h5 class="card-title blokqx-card-title">
+                                    @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Direction)<span class="align-top">°</span>
+                                </h5>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li><span style="color:black;"> This is the current wind direction facing the boat.</span></li>
+                                    <li><span style="color:black;"> An updated view is shown atleast every half hour.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+    </section>
+    <!-- JavaScript rules for navigation settings -->
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
 
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
 
-
-        <div class="col-lg-offset-2 col-lg-5 moduleStyle">
-            <div class="headerDiv">
-                <h3 class="centeredWhite ct">Windspeed</h3>
-            </div>
-
-            <p class="centeredWhite">This is the current windspeed </p>
-            <div class="centeredWhite">
-
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Speed) km/h
-            </div>
-
-        </div>
-
-        <div class="col-lg-5 moduleStyle">
-            <div class="headerDiv">
-                <h3 class="centeredWhite ct">Temperature</h3>
-            </div>
-
-            <p class="centeredWhite">This is the current temperature</p>
-            <div class="centeredWhite">
-
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature) °C
-            </div>
-        </div>
-        <div class="col-lg-offset-2 col-lg-5 moduleStyle">
-            <div class="headerDiv">
-                <h3 class="centeredWhite ct">Winddirection</h3>
-            </div>
-
-            <p class="centeredWhite">This is the current direction of the wind</p>
-            <div class="centeredWhite">
-
-                @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Direction)°
-            </div>
-        </div>
-    </div>
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
     <script>
 
         //sets up leaflet map
@@ -125,5 +191,7 @@
         firstpolyline.addTo(map);
 
     </script>
+
+
 </body>
 </html>

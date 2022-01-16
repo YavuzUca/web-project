@@ -16,7 +16,7 @@
     @RenderSection("head", required: false)
 </head>
 <body>
-    <!--header-->
+    <!--header section of every main page-->
         <header id="site-header" class="fixed-top">
             <div class="container">
                 <nav class="navbar navbar-expand-lg ">
@@ -30,22 +30,21 @@
                             <li class="navbar item">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
                             <li class="navbar item">@Html.ActionLink("Blog", "BlogPost", "Home", new { @class = "nav-link" })</li>
                             <li class="navbar item">@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
-                            <li class="navbar item">@Html.ActionLink("Info", "InfoBoot", "Home", new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("Boat", "InfoBoot", "Home", new { @class = "nav-link" })</li>
                             <li class="navbar item">@Html.ActionLink("Credits", "Credits", "Home", new { @class = "nav-link" })</li>
                         </ul>
 
                         <ul class="navbar-nav search-right mt-lg-1 mt-2">
 
                             <li class="nav-item">
-                                <span style="color:white;">@Html.Partial("_LoginPartial")</span>
-
-</ul>
+                                @Html.Partial("_LoginPartial")
+                        </ul>
                     </div>
                 </nav>
             </div>
         </header>
 
-        <!--VOET-->
+        <!--Foot section on every main page-->
         <div>
             @RenderBody()
         </div>
