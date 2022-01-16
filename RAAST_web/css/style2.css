@@ -17366,54 +17366,6 @@ label.price-label {
   color: #fff;
 }
 
-.t2t-contact-11 .map iframe {
-  width: 100%;
-  min-height: 500px;
-  border: none;
-}
-
-@media all and (max-width: 991px) {
-  .t2t-contact-11 .map iframe {
-    min-height: 350px;
-  }
-
-  .t2t-contact-11 .contact-left.pr-lg-4 {
-    order: 2;
-    margin-top: 50px;
-  }
-
-  .t2t-contact-11 .form-inner-cont .form-input {
-    margin-bottom: 2px;
-  }
-
-  .t2t-contact-11 .align-form-map {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@media all and (max-width:600px) {
-  .t2t-contact-11 .map iframe {
-    min-height: 200px;
-  }
-
-  .t2t-contact-11 .btn-style {
-    display: block;
-    width: 100%;
-  }
-
-  .t2t-contact-11 .align-form-map {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@media all and (max-width:568px) {
-  .t2t-contact-11 .map iframe {
-    min-height: 140px;
-  }
-
-}
 
 /*--//contact--*/
 /*--/breadcrumb--*/
@@ -17878,5 +17830,17 @@ ul.breadcrumbs-custom-path li a {
   }
 }
 
-/*--//footer--*/
-/*sourceMappingURL=style-freedom.css.map */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
