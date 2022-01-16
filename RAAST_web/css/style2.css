@@ -16982,22 +16982,20 @@ button.owl-next {
 
 @media (max-width:736px) {}
 
-/*--//content-4--*/
-/*--/pricing--*/
 
-.t2t-pricing .price-main-info .card-body {
+.t2t-blokken .blokq-main-info .card-body {
   padding: 3.5em 3em;
   position: relative;
   overflow: hidden;
 }
 
-.t2t-pricing ul.list-unstyled li span.fa {
+.t2t-blokken ul.list-unstyled li span.fa {
   font-size: 14px;
   margin-right: 5px;
   color: var(--primary-color);
 }
 
-label.price-label {
+label.blokq-label {
   font-size: 14px;
   color: #fff;
   background: var(--primary-color);
@@ -17008,32 +17006,32 @@ label.price-label {
   transform: rotate(45deg);
 }
 
-.t2t-pricing .price-inner.card.box-shadow {
+.t2t-blokken .blokq-inner.card.box-shadow {
   background: var(--bg-color);
   border-radius: var(--border-radius);
   border: 1px solid var(--border-light);
   border-top: 3px solid var(--heading-color);
 }
 
-.t2t-pricing .pricing-card-title span {
+.t2t-blokken .blokqx-card-title span {
   font-size: .5em;
   display: inline-block;
   color: #5E6271;
   font-weight: 300;
 }
 
-.t2t-pricing .price-main-info small.text-muted {
+.t2t-blokken .blokq-main-info small.text-muted {
   font-size: 0.5em;
 }
 
-.t2t-pricing ul.list-unstyled li {
+.t2t-blokken ul.list-unstyled li {
   font-size: 1em;
   color: var(--font-color);
   line-height: 30px;
   margin-bottom: 5px;
 }
 
-.t2t-pricing .price-main-info h5.card-title {
+.t2t-blokken .blokq-main-info h5.card-title {
   font-size: 3em;
   color: var(--heading-color);
   font-weight: 600;
@@ -17041,60 +17039,58 @@ label.price-label {
   text-align: center;
 }
 
-.t2t-pricing .card-deck .card {
+.t2t-blokken .card-deck .card {
   padding: 0px;
 }
 
-.t2t-pricing .price-inner.card h4 {
+.t2t-blokken .blokq-inner.card h4 {
   color: var(--heading-color);
   font-size: 20px;
   font-weight: 600;
 }
 
-.t2t-pricing .price-main-info.card {
+.t2t-blokken .blokq-main-info.card {
   border-radius: 0;
   border: none;
   background: none;
 }
 
-.t2t-pricing .price-inner.card.box-shadow:hover,
-.t2t-pricing .price-inner.card.box-shadow.active {
+.t2t-blokken .blokq-inner.card.box-shadow:hover,
+.t2t-blokken .blokq-inner.card.box-shadow.active {
   background: var(--bg-light);
   transition: all .3s;
   border-top: 3px solid var(--primary-color);
 }
 
-.t2t-pricing .price-inner.card.box-shadow:hover .pricing-card-title,
-.t2t-pricing .price-inner.card.box-shadow.active .pricing-card-title {
+.t2t-blokken .blokq-inner.card.box-shadow:hover .blokqx-card-title,
+.t2t-blokken .blokq-inner.card.box-shadow.active .blokqx-card-title {
   color: var(--primary-color);
 }
 
 @media (max-width: 1080px) {
-  .t2t-pricing .price-main-info .card-body {
+  .t2t-blokken .blokq-main-info .card-body {
     padding: 3.5em 2em;
   }
 }
 
 @media (max-width: 480px) {
-  .t2t-pricing .price-main-info h5.card-title {
+  .t2t-blokken .blokq-main-info h5.card-title {
     font-size: 2.5em;
   }
 
-  .t2t-pricing .price-main-info .card-body {
+  .t2t-blokken .blokq-main-info .card-body {
     padding: 2.5em 3em;
   }
-  .t2t-pricing ul.list-unstyled li {
+  .t2t-blokken ul.list-unstyled li {
       font-size: 0.9em;
   }
 }
 
-/*--//pricing--*/
 
 .t2t-team-main {
   /*-- team --*/
 }
 
-/*-- team --*/
 .t2t-team-main .team-grids {
   position: relative;
   overflow: hidden;
