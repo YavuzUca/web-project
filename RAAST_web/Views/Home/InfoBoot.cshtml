@@ -19,7 +19,7 @@
     @section head{
         <style type="text/css">
             body {
-                background-image: url('/images/back8.png');
+                background-image: url('/images/back9.png');
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -52,11 +52,28 @@
                             <div class="card-body">
                                 <h4 class="text-uppercase text-center mb-3">Speed</h4>
                                 <h5 class="card-title pricing-card-title">
-                                    <span class="align-top">km/h</span>@Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed)
+                                    @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].boat_Speed)<span class="align-top">km/h</span>
 
                                 </h5>
                                 <ul class="list-unstyled mt-3 mb-4">
                                     <li> This is the current speed of the boat</li>
+                                    <li> An updated view is shown atleast every half hour</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6 price-main-info mt-lg-0 mt-4">
+                        <div class="price-inner card box-shadow">
+
+                            <div class="card-body">
+                                <h4 class="text-uppercase text-center mb-3">Temperature</h4>
+                                <h5 class="card-title pricing-card-title">
+                                    @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature)<span class="align-top">°C</span>
+                                </h5>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li> This is the current temperature surrounding the boat</li>
                                     <li> An updated view is shown atleast every half hour</li>
                                 </ul>
                             </div>
@@ -68,31 +85,16 @@
                             <div class="card-body">
                                 <h4 class="text-uppercase text-center mb-3">Wind Speed</h4>
                                 <h5 class="card-title pricing-card-title">
-                                    <span class="align-top">km/h</span>@Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Speed)
+                                    @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Speed)<span class="align-top">km/h</span>
                                 </h5>
                                 <ul class="list-unstyled mt-3 mb-4">
-                                    <li> This is the current speed of the boat</li>
+                                    <li> This is the current wind speed facing the boat</li>
                                     <li> An updated view is shown atleast every half hour</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 price-main-info mt-lg-0 mt-4">
-                        <div class="price-inner card box-shadow">
-
-                            <div class="card-body">
-                                <h4 class="text-uppercase text-center mb-3">Temperature</h4>
-                                <h5 class="card-title pricing-card-title">
-                                    @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].temperature)<span class="align-top">°C</span>
-                                </h5>
-                                <ul class="list-unstyled mt-3 mb-4">
-                                    <li> This is the current speed of the boat</li>
-                                    <li> An updated view is shown atleast every half hour</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-lg-4 col-md-6 price-main-info mt-lg-0 mt-4">
                         <div class="price-inner card box-shadow">
                             <div class="card-body">
@@ -101,7 +103,7 @@
                                     @Html.DisplayFor(model => Model.ToList()[Model.ToList().Count - 1].wind_Direction)<span class="align-top">°</span>
                                 </h5>
                                 <ul class="list-unstyled mt-3 mb-4">
-                                    <li> This is the current speed of the boat</li>
+                                    <li> This is the current wind direction facing the boat</li>
                                     <li> An updated view is shown atleast every half hour</li>
                                 </ul>
                             </div>
