@@ -11,7 +11,7 @@
     @section head{
         <style type="text/css">
             body {
-                background-image: url('/images/back6.jpg');
+                background-image: url('/images/back1.jpg');
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -20,57 +20,63 @@
 </head>
 
 <body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <!-- Adding comment section -->
-    <br />
-    <br />
-    <br />
-    <br />
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+    <div class="row" style="position:relative; left:80px;">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="col-10">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <h4>Comment</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.HiddenFor(model => model.blogpost_id, new { @Value = ViewBag.blog_id })
-                    @Html.ValidationMessageFor(model => model.blogpost_id, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                    <div class="form-horizontal">
+                        <h4>Place your own comment on this article:</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.HiddenFor(model => model.blogpost_id, new { @Value = ViewBag.blog_id })
+                                @Html.ValidationMessageFor(model => model.blogpost_id, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.commenter, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.commenter, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.commenter, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                        <div class="form-group">
+                            <h6 class="control-label col-md-2">Name:</h6>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.commenter, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.commenter, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.content, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                        <div class="form-group">
+                            <h6 class="control-label col-md-2">Comment:</h6>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.HiddenFor(model => model.cu_date, new { @Value = ViewBag.Time })
-                    @Html.ValidationMessageFor(model => model.cu_date, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.HiddenFor(model => model.cu_date, new { @Value = ViewBag.Time })
+                                @Html.ValidationMessageFor(model => model.cu_date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Submit" class="btn btn-outline-secondary btn-primary mt-md-2 mt-4" />
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
-    }
-
+    </div>
     <!-- JavaScript rules for navigation settings -->
     <script src="~/js/jquery-3.3.1.min.js"></script>
     <script>
@@ -105,5 +111,6 @@
             });
         });
     </script>
+
 
 </body>
