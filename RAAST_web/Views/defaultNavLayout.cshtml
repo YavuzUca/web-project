@@ -27,11 +27,11 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="navbar item">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
-                            <li class="navbar item">@Html.ActionLink("Blog", "BlogPost", "Home", new { @class = "nav-link" })</li>
-                            <li class="navbar item">@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
-                            <li class="navbar item">@Html.ActionLink("Boat", "InfoBoot", "Home", new { @class = "nav-link" })</li>
-                            <li class="navbar item">@Html.ActionLink("Credits", "Credits", "Home", new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("Home", "Index", "Home", "Home" ,new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("Blog", "BlogPost", "Home", "Home/Blogpost" ,new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("About", "About", "Home", "Home/About", new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("Boat", "InfoBoot", "Home", "Home/InfoBoot", new { @class = "nav-link" })</li>
+                            <li class="navbar item">@Html.ActionLink("Credits", "Credits", "Home", "Home/Credits", new { @class = "nav-link" })</li>
                         </ul>
 
                         <ul class="navbar-nav search-right mt-lg-1 mt-2">
@@ -48,7 +48,7 @@
         <div>
             @RenderBody()
         </div>
-        <div class="container body-content">
+        <div class="container body-content" >
             <hr />
             <footer>
                 <p>&copy; @DateTime.Now.Year - RAAST Hogeschool Rotterdam</p>
